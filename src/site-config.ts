@@ -15,9 +15,10 @@ export const SITE = {
   parent: 'https://howpreventionworks.com',
   dataLicence: { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
   codeLicence: { name: 'MIT', url: 'https://opensource.org/license/mit' },
-  // Cloudflare Web Analytics beacon token. Leave empty until Stan supplies it; no beacon is
-  // loaded while it is empty.
-  analyticsToken: '',
+  // Cloudflare Web Analytics beacon token (not a secret: it appears in every page's source).
+  // Cookieless. Set up manually for returns.howpreventionworks.com on 25 September 2026.
+  // Empty string turns the beacon off.
+  analyticsToken: '6bd54de6f80247dcaf86251b3a387b30',
   // Keep false until the site is launched on the custom domain. While false every page
   // carries noindex and a site-wide X-Robots-Tag header is written.
   indexable: false,
