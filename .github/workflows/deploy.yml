@@ -42,6 +42,21 @@ jobs:
           name: dist
           path: dist
 
+      - name: Create the Pages project if it does not exist
+        if: env.HAS_CF == 'true'
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          API="https://api.cloudflare.com/client/v4/accounts/$ACCOUNT/pages/projects"
+          if curl -sf -o /dev/null "$API/prevention-costs" -H "Authorization: Bearer $TOKEN"; then
+            echo "Pages project prevention-costs exists."
+          else
+            curl -sf "$API" -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+              --data '{"name":"prevention-costs","production_branch":"main"}' \
+              | jq '{success, name: .result.name, subdomain: .result.subdomain}'
+          fi
+
       - name: Deploy
         id: deploy
         if: env.HAS_CF == 'true'
