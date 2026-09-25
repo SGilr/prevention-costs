@@ -50,7 +50,7 @@ const without = ROWS.filter((r) => r.kind === 'Intervention' && !(r.payer && r.b
       </table>
     </div>
     {without.length > 0 && (
-      <p class="muted">No beneficiary is recorded for {without.map((r, i) => <>{i > 0 && ', '}<a href={entryHref(r.id)}>{r.id}</a></>)}, where the trial showed no clear benefit.</p>
+      <p class="muted">No beneficiary is recorded for {without.map((r, i) => <>{i > 0 && ', '}<a href={entryHref(r.id)}>{r.id}</a></>)}.</p>
     )}
   </section>
 </Base>

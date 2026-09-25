@@ -1,0 +1,30 @@
+Prevention Returns Ledger: data and site text
+
+Copyright (c) 2026 Prevention Informatics, a division of Oxon Advisory.
+Compiled by Stan Gilmour KPM FRSA.
+
+The data in src/data/ledger.json, the downloads generated from it (ledger.json,
+ledger.csv and the Excel workbook) and the text of the website at
+https://returns.howpreventionworks.com are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+What the licence covers: the compilation of the ledger, the evidence grades, the
+classification of each entry (life stage, neurodevelopmental window, system,
+human security tag, result, payer and beneficiary), the wording of items,
+measures and notes, and the site text.
+
+What it does not cover: the underlying figures. Each figure remains attributed
+to its original source, which is named and linked in its entry. Cite that source
+for the figure itself. Quotation of a source's wording is subject to that
+source's own terms.
+
+Figures shown in 2025/26 prices are an Oxon Advisory calculation using the HM
+Treasury GDP deflator series (Open Government Licence v3.0) and are covered by
+this licence.
+
+Suggested attribution:
+Gilmour, S. (2026) Prevention Returns Ledger. Prevention Informatics, Oxon
+Advisory. Available at: https://returns.howpreventionworks.com (Accessed: [date]).
+
+The site's code is licensed separately under the MIT licence (see LICENSE).
