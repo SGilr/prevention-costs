@@ -17,3 +17,6 @@
 
 /downloads/ledger.csv
   Content-Type: text/csv; charset=utf-8
+
+/CITATION.cff
+  Content-Type: text/plain; charset=utf-8
