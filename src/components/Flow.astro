@@ -1,6 +1,7 @@
 ---
+import { benefitLabel } from '../lib/ledger';
 import type { Row } from '../lib/ledger';
 interface Props { row: Row }
 const { row } = Astro.props;
 ---
-<span class="flow"><span>{row.payer || 'n/a'}</span> <svg class="arrow" aria-hidden="true" focusable="false" viewBox="0 0 16 10" width="16" height="10"><path d="M1 5h13M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> repays </span> <span>{row.beneficiary || 'No benefit shown in trial'}</span></span>
+<span class="flow"><span>{row.payer || 'n/a'}</span> <svg class="arrow" aria-hidden="true" focusable="false" viewBox="0 0 16 10" width="16" height="10"><path d="M1 5h13M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> repays </span> <span>{benefitLabel(row)}</span></span>

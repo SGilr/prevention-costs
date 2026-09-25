@@ -49,9 +49,9 @@ const unitReturn = (id: string, n: number) => {
 };
 const checks: [string, number, number][] = [];
 const pp = unitReturn('I07', 100);
-checks.push(['Parenting programmes, 100 families: cost', Math.round(pp.cost), 117700]);
-checks.push(['Parenting programmes, 100 families: return low', Math.round(pp.lo), 329560]);
-checks.push(['Parenting programmes, 100 families: return high', Math.round(pp.hi), 717970]);
+checks.push(['Parenting programmes, 100 participants: cost', Math.round(pp.cost), 117700]);
+checks.push(['Parenting programmes, 100 participants: return low', Math.round(pp.lo), 329560]);
+checks.push(['Parenting programmes, 100 participants: return high', Math.round(pp.hi), 717970]);
 checks.push(['Liaison and Diversion, 100 referrals: return', Math.round(unitReturn('I26', 100).lo), 93300]);
 checks.push(['ACE scenario at 10%: DALYs averted', Math.round((p!.aceDalys * 10) / 100), 185870]);
 for (const [label, got, want] of checks) {

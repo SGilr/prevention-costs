@@ -2,8 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import { LEDGER, ROWS } from '../../lib/ledger';
 import { calcParams } from '../../lib/params';
+import { CALC_NOTES } from '../../lib/calc-notes';
 const P = calcParams(LEDGER);
-const CI = ROWS.filter((r) => r.calc).map((r) => ({ id: r.id, name: r.short || r.item, year: r.year, source: r.source, grade: r.grade, calc: r.calc }));
+const CI = ROWS.filter((r) => r.calc).map((r) => ({ id: r.id, name: r.short || r.item, year: r.year, source: r.source, grade: r.grade, calc: r.calc, note: CALC_NOTES[r.id] ?? '' }));
 const data = { P, CI };
 ---
 <Base title="Scenario calculator" description="Apply published returns from the ledger to a spend or caseload you choose, value health gains, and run the ACE reduction scenario. Illustrative arithmetic on sourced ratios.">

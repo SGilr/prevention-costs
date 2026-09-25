@@ -1,7 +1,7 @@
 // Scenario calculator. Arithmetic and caveat wording follow the approved prototype exactly.
 // Every parameter arrives from ledger.json through the calc-data block; none is typed here.
 type Calc = { kind: 'ratio' | 'unit'; low: number; high: number; horizon: string; persp: string; unit_cost?: number; unit?: string };
-type CI = { id: string; name: string; year: string; source: string; grade: string; calc: Calc };
+type CI = { id: string; name: string; year: string; source: string; grade: string; calc: Calc; note: string };
 type P = { qalyValue: number; qalyYear: string; niceLow: number; niceHigh: number; niceFrom: string; aceDalys: number; ukGdpPerCapitaUsd: number };
 const { P, CI } = JSON.parse(document.getElementById('calc-data')!.textContent!) as { P: P; CI: CI[] };
 
@@ -37,7 +37,7 @@ function calc() {
     `<small>Returned value</small><span class="big">${range}</span>
      <small>Ratio ${k.low === k.high ? k.low.toFixed(2) : k.low.toFixed(2) + ' to ' + k.high.toFixed(2)} per £1 · ${esc(k.horizon)} · ${esc(k.persp)} · price year ${esc(r.year)}</small>
      <div class="bars">${bar('Cost', cost, true)}${bar('Return (low)', lo)}${k.low !== k.high ? bar('Return (high)', hi) : ''}</div>
-     <small>${k.kind === 'unit' ? `Unit cost ${fmt(k.unit_cost!)} per ${esc(singular(k.unit!))}. ` : ''}Source: ${esc(r.source)}. Grade ${r.grade}. <a href="/entry/${r.id.toLowerCase()}/">Open ${r.id}</a></small>`;
+     <small>${k.kind === 'unit' ? `Unit cost ${fmt(k.unit_cost!)} per ${esc(singular(k.unit!))}. ` : ''}Source: ${esc(r.source)}. Grade ${r.grade}. <a href="/entry/${r.id.toLowerCase()}/">Open ${r.id}</a></small>${r.note ? `<div class="warn">${esc(r.note)}</div>` : ''}`;
   // Widths set through the CSSOM, which the Content-Security-Policy allows, not inline style attributes.
   $('c-out').querySelectorAll<HTMLElement>('.fill').forEach((f) => (f.style.width = f.dataset.w + '%'));
 }

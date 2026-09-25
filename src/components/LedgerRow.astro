@@ -1,5 +1,5 @@
 ---
-import { stageName, HS, entryHref, RES } from '../lib/ledger';
+import { stageName, HS, entryHref, RES, benefitLabel } from '../lib/ledger';
 import type { Row } from '../lib/ledger';
 import Grade from './Grade.astro';
 import ResultPill from './ResultPill.astro';
@@ -19,7 +19,7 @@ const search = [r.id, r.item, r.value, r.measure, r.source, r.note, r.domain, r.
   </summary>
   <div class="rbody">
     <dl class="fields">
-      {(r.payer || r.beneficiary) && <><dt>Pays</dt><dd>{r.payer || 'n/a'}</dd><dt>Benefits</dt><dd>{r.beneficiary || 'No benefit shown in trial'}</dd></>}
+      {(r.payer || r.beneficiary) && <><dt>Pays</dt><dd>{r.payer || 'n/a'}</dd><dt>Benefits</dt><dd>{benefitLabel(r)}</dd></>}
       <dt>Design</dt><dd>{r.design}</dd>
       <dt>Where</dt><dd>{r.place}</dd>
       <dt>Price year</dt><dd>{r.year}</dd>

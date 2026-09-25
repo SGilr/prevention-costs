@@ -8,6 +8,7 @@ import { ROWS, LEDGER, stageName, stageAge, HS, slug, entryHref, harvard } from 
 import type { Row } from '../../lib/ledger';
 import { rebasedFor, fmtRebased, REBASE_LABEL } from '../../lib/rebase';
 import { SITE, REVIEW } from '../../site-config';
+import { CALC_NOTES } from '../../lib/calc-notes';
 
 export function getStaticPaths() {
   return ROWS.map((r) => ({ params: { id: slug(r.id) }, props: { r } }));
@@ -81,7 +82,8 @@ const desc = `${r.item}: ${r.measure.toLowerCase()}. ${r.value}. Grade ${r.grade
       {r.calc && (
         <section aria-labelledby="h-calc">
           <h2 id="h-calc">Scenario calculator</h2>
-          <p>This entry has a published ratio. <a href={`/calculator/?int=${r.id}`}>Apply it to a spend or caseload</a>.</p>
+          <p>The calculator can apply this entry's ratio. <a href={`/calculator/?int=${r.id}`}>Apply it to a spend or caseload</a>.</p>
+          {CALC_NOTES[r.id] && <p class="warn">{CALC_NOTES[r.id]}</p>}
         </section>
       )}
 

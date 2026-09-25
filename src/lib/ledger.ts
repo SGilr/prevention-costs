@@ -47,6 +47,11 @@ export const entryHref = (id: string) => `/entry/${slug(id)}/`;
 export const byId = (id: string) => ROWS.find((r) => r.id === id);
 export const countKind = (k: string) => ROWS.filter((r) => r.kind === k).length;
 
+/** Beneficiary text. Where none is recorded, null UK trials read "No benefit shown in trial";
+ *  other results read "Benefit not established" (agreed 25 September 2026, DATA-QUERIES 15). */
+export const benefitLabel = (r: Row) =>
+  r.beneficiary || (r.result === 'No effect in UK trial' ? 'No benefit shown in trial' : 'Benefit not established');
+
 /** Harvard-style reference built from the ledger's own source and URL fields. */
 export const harvard = (r: Row) => `${r.source}. Available at: ${r.url} (Accessed: ${SITE.sourcesChecked}).`;
 
