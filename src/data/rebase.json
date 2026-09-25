@@ -1,0 +1,485 @@
+{
+  "status": "draft",
+  "signed_off_by": null,
+  "signed_off_on": null,
+  "label": "Oxon Advisory calculation, 2025/26 prices, HM Treasury GDP deflator",
+  "target_price_year": "2025/26",
+  "deflators": "src/data/deflators.csv (HM Treasury, June 2026 Quarterly National Accounts)",
+  "method": {
+    "financial": "amount × 100 ÷ financial-year index for the price year (2025/26 = 100).",
+    "calendar": "amount × 100 ÷ (0.25 × index for the financial year ending in March of that calendar year + 0.75 × index for the financial year starting in April), because nine months of a calendar year fall in the later financial year."
+  },
+  "rules": "One £ figure per entry, quoted exactly from the value field. Ratios, percentages, counts, DALYs and US$ figures are not rebased. Entries with no stated price year, an approximate year, a range of years, or a year later than the latest deflator outturn are left out.",
+  "entries": [
+    {
+      "id": "H01",
+      "figure": "£16.6bn",
+      "amount": 16600000000.000002,
+      "price_year": "2016",
+      "basis": "calendar",
+      "note": "Principal figure. Per-person and per-system components not rebased."
+    },
+    {
+      "id": "H02",
+      "figure": "£14.7bn",
+      "amount": 14700000000.0,
+      "price_year": "2024/25",
+      "basis": "financial",
+      "note": ""
+    },
+    {
+      "id": "H04",
+      "figure": "£222",
+      "amount": 222,
+      "price_year": "2015",
+      "basis": "calendar",
+      "note": "Headline figure (by age 5). The age 1 figure (£91) not rebased."
+    },
+    {
+      "id": "H06",
+      "figure": "£2.946bn",
+      "amount": 2946000000.0,
+      "price_year": "2006",
+      "basis": "calendar",
+      "note": "Per-child figures not rebased."
+    },
+    {
+      "id": "H07",
+      "figure": "£27.8bn",
+      "amount": 27800000000.0,
+      "price_year": "2019",
+      "basis": "calendar",
+      "note": "Headline cohort figure. Per-child figure (£71,309) not rebased."
+    },
+    {
+      "id": "H10",
+      "figure": "£70,019",
+      "amount": 70019,
+      "price_year": "1998",
+      "basis": "calendar",
+      "note": "Figure for people with conduct disorder. Comparison figure (£7,423) not rebased; the ratio between them is unaffected."
+    },
+    {
+      "id": "H11",
+      "figure": "£717",
+      "amount": 717,
+      "price_year": "2008",
+      "basis": "calendar",
+      "note": "CHECK: two unrelated figures (men £271 a year; women £717 over 8 years). Headline figure chosen."
+    },
+    {
+      "id": "H12",
+      "figure": "£170,000",
+      "amount": 170000,
+      "price_year": "2024",
+      "basis": "calendar",
+      "note": "Lower bound (\"at least\"). Cohort figure not rebased."
+    },
+    {
+      "id": "H18",
+      "figure": "£43bn",
+      "amount": 43000000000.0,
+      "price_year": "2025",
+      "basis": "calendar",
+      "note": "Components not rebased."
+    },
+    {
+      "id": "H19",
+      "figure": "£318,400",
+      "amount": 318400,
+      "price_year": "2023/24",
+      "basis": "financial",
+      "note": "Children's home place. Foster care and LA total not rebased."
+    },
+    {
+      "id": "H21",
+      "figure": "£300bn",
+      "amount": 300000000000.0,
+      "price_year": "2022",
+      "basis": "calendar",
+      "note": "Split by payer not rebased."
+    },
+    {
+      "id": "H22",
+      "figure": "£27.44bn",
+      "amount": 27440000000.0,
+      "price_year": "2024",
+      "basis": "calendar",
+      "note": "CHECK: \"2024\" read as calendar year. Components not rebased."
+    },
+    {
+      "id": "H23",
+      "figure": "£19bn",
+      "amount": 19000000000.0,
+      "price_year": "2020/21",
+      "basis": "financial",
+      "note": "Lower bound (\"over\"). Components not rebased."
+    },
+    {
+      "id": "H25",
+      "figure": "£98bn",
+      "amount": 98000000000.0,
+      "price_year": "2023",
+      "basis": "calendar",
+      "note": "Sub-totals not rebased."
+    },
+    {
+      "id": "H26",
+      "figure": "£39.5bn",
+      "amount": 39500000000.0,
+      "price_year": "2023",
+      "basis": "calendar",
+      "note": "Components not rebased."
+    },
+    {
+      "id": "H27",
+      "figure": "£2.84bn",
+      "amount": 2840000000.0,
+      "price_year": "2024/25",
+      "basis": "financial",
+      "note": "Gross figure. Net figure not rebased."
+    },
+    {
+      "id": "H28",
+      "figure": "£66bn",
+      "amount": 66000000000.0,
+      "price_year": "2016/17",
+      "basis": "financial",
+      "note": "The source's own 2024-price figure (≈£85bn) is left as reported."
+    },
+    {
+      "id": "H29",
+      "figure": "£61bn",
+      "amount": 61000000000.0,
+      "price_year": "2019/20",
+      "basis": "financial",
+      "note": "CHECK: headline £78bn is the sum of two figures and does not appear in the value text, so the individual figure is used. Business figure (£17bn) not rebased."
+    },
+    {
+      "id": "H31",
+      "figure": "£59,026",
+      "amount": 59026,
+      "price_year": "2024/25",
+      "basis": "financial",
+      "note": "Overall resource cost. Direct cost not rebased."
+    },
+    {
+      "id": "H35",
+      "figure": "£11.2bn",
+      "amount": 11200000000.0,
+      "price_year": "2023/24",
+      "basis": "financial",
+      "note": "Lower bound (\"at least\")."
+    },
+    {
+      "id": "H36",
+      "figure": "£1.3bn",
+      "amount": 1300000000.0,
+      "price_year": "2018/19",
+      "basis": "financial",
+      "note": "Approximate in the source (\"about\")."
+    },
+    {
+      "id": "I02",
+      "figure": "£19,601",
+      "amount": 19601,
+      "price_year": "2018/19",
+      "basis": "financial",
+      "note": "CHECK: cost per QALY. Rebasing moves it against the NICE range, which is set in current prices."
+    },
+    {
+      "id": "I04",
+      "figure": "£150,000",
+      "amount": 150000,
+      "price_year": "2020",
+      "basis": "calendar",
+      "note": "CHECK: short-term cost per QALY. Lifetime saving (£37) not rebased."
+    },
+    {
+      "id": "I05",
+      "figure": "£1,812",
+      "amount": 1812,
+      "price_year": "2012/13",
+      "basis": "financial",
+      "note": "Incremental cost per participant."
+    },
+    {
+      "id": "I07",
+      "figure": "£1,177",
+      "amount": 1177,
+      "price_year": "2008/09",
+      "basis": "financial",
+      "note": "Cost per family. The calculator keeps the source figure; this column is for reference only."
+    },
+    {
+      "id": "I09",
+      "figure": "£4,489",
+      "amount": 4489,
+      "price_year": "2006/07",
+      "basis": "financial",
+      "note": "Incremental cost per child."
+    },
+    {
+      "id": "I35",
+      "figure": "£3,800",
+      "amount": 3800,
+      "price_year": "2025",
+      "basis": "calendar",
+      "note": "CHECK: cost per year of good health. NHS comparison (£13,500) not rebased."
+    },
+    {
+      "id": "P01",
+      "figure": "£70,000",
+      "amount": 70000,
+      "price_year": "2020/21",
+      "basis": "financial",
+      "note": "Green Book value; the Green Book itself expects this to be uprated for later price bases."
+    },
+    {
+      "id": "P02",
+      "figure": "£13,000",
+      "amount": 13000,
+      "price_year": "2019",
+      "basis": "calendar",
+      "note": "Central value. Range not rebased."
+    },
+    {
+      "id": "F08",
+      "figure": "£40bn",
+      "amount": 40000000000.0,
+      "price_year": "2023",
+      "basis": "calendar",
+      "note": "Value states \"in 2023 prices\"; lower bound (\"more than\")."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "F01",
+      "reason": "not rebased: no £ amount (count)"
+    },
+    {
+      "id": "F02",
+      "reason": "not rebased: no £ amount (count)"
+    },
+    {
+      "id": "F03",
+      "reason": "not rebased: no £ amount (share of GDP)"
+    },
+    {
+      "id": "F04",
+      "reason": "not rebased: forecast in cash terms for 2029/30; price year not stated"
+    },
+    {
+      "id": "F05",
+      "reason": "not rebased: forecast in cash terms for 2027/28; price year not stated"
+    },
+    {
+      "id": "F06",
+      "reason": "not rebased: no £ amount (count)"
+    },
+    {
+      "id": "F07",
+      "reason": "not rebased: no £ amount (count)"
+    },
+    {
+      "id": "F09",
+      "reason": "not rebased: US$ figure"
+    },
+    {
+      "id": "H03",
+      "reason": "not rebased: price year not stated (\"2014 report\" is the publication date)"
+    },
+    {
+      "id": "H05",
+      "reason": "not rebased: no £ amount (prevalence)"
+    },
+    {
+      "id": "H08",
+      "reason": "not rebased: US$ figure"
+    },
+    {
+      "id": "H09",
+      "reason": "not rebased: no £ amount (prevalence)"
+    },
+    {
+      "id": "H13",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "H14",
+      "reason": "not rebased: price year approximate"
+    },
+    {
+      "id": "H15",
+      "reason": "not rebased: price year approximate"
+    },
+    {
+      "id": "H16",
+      "reason": "not rebased: no £ amount (prevalence)"
+    },
+    {
+      "id": "H17",
+      "reason": "not rebased: no £ amount (prevalence)"
+    },
+    {
+      "id": "H20",
+      "reason": "not rebased: price year 2026 is later than the latest deflator outturn (2025/26)"
+    },
+    {
+      "id": "H24",
+      "reason": "not rebased: price year 2026 is later than the latest deflator outturn (2025/26)"
+    },
+    {
+      "id": "H30",
+      "reason": "not rebased: value is a range"
+    },
+    {
+      "id": "H32",
+      "reason": "not rebased: no £ amount (count)"
+    },
+    {
+      "id": "H33",
+      "reason": "not rebased: no £ amount (percentage)"
+    },
+    {
+      "id": "H34",
+      "reason": "not rebased: no £ amount (percentages)"
+    },
+    {
+      "id": "I01",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I03",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I06",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I08",
+      "reason": "not rebased: ratio (benefit per £1)"
+    },
+    {
+      "id": "I10",
+      "reason": "not rebased: ratio (return per £1)"
+    },
+    {
+      "id": "I11",
+      "reason": "not rebased: ratio (return per £1)"
+    },
+    {
+      "id": "I12",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I13",
+      "reason": "not rebased: no £ amount (effect size)"
+    },
+    {
+      "id": "I14",
+      "reason": "not rebased: price year is a range"
+    },
+    {
+      "id": "I15",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I16",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I17",
+      "reason": "not rebased: no £ amount (effect size)"
+    },
+    {
+      "id": "I18",
+      "reason": "not rebased: no £ amount (percentages)"
+    },
+    {
+      "id": "I19",
+      "reason": "not rebased: no £ amount"
+    },
+    {
+      "id": "I20",
+      "reason": "not rebased: no £ amount (count)"
+    },
+    {
+      "id": "I21",
+      "reason": "not rebased: no £ amount (percentages)"
+    },
+    {
+      "id": "I22",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I23",
+      "reason": "not rebased: ratio (return per £1)"
+    },
+    {
+      "id": "I24",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I25",
+      "reason": "not rebased: price year approximate"
+    },
+    {
+      "id": "I26",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I27",
+      "reason": "not rebased: ratio (return per £1)"
+    },
+    {
+      "id": "I28",
+      "reason": "not rebased: ratio (return per £1)"
+    },
+    {
+      "id": "I29",
+      "reason": "not rebased: no £ amount (percentages)"
+    },
+    {
+      "id": "I30",
+      "reason": "not rebased: ratio (benefit-cost ratio)"
+    },
+    {
+      "id": "I31",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I32",
+      "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I33",
+      "reason": "not rebased: no £ amount (percentages)"
+    },
+    {
+      "id": "I34",
+      "reason": "not rebased: ratio (median return per £1)"
+    },
+    {
+      "id": "P03",
+      "reason": "not rebased: threshold set in current prices from April 2026"
+    },
+    {
+      "id": "P04",
+      "reason": "not rebased: no £ amount (rates)"
+    },
+    {
+      "id": "P05",
+      "reason": "not rebased: no £ amount (rates)"
+    },
+    {
+      "id": "P06",
+      "reason": "not rebased: DALYs"
+    },
+    {
+      "id": "P07",
+      "reason": "not rebased: share of spend"
+    }
+  ]
+}

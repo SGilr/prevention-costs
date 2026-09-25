@@ -1,0 +1,12 @@
+{
+  "title": "GDP deflators at market prices, and money GDP June 2026 (Quarterly National Accounts)",
+  "publisher": "HM Treasury",
+  "release_page": "https://www.gov.uk/government/statistics/gdp-deflators-at-market-prices-and-money-gdp-june-2026-quarterly-national-accounts",
+  "file_url": "https://assets.publishing.service.gov.uk/media/6a43dbc7167a99cf0018d9a0/GDP_Deflators_Qtrly_National_Accounts_June_2026_update.xlsx",
+  "published": "2026-06-30",
+  "downloaded": "2026-09-25",
+  "outturn_note": "Outturn to 2025-26 (2025) from ONS Quarterly National Accounts, 30 June 2026. Later years are OBR March 2026 forecasts, given as percentage changes only.",
+  "base": "Financial year index 2025-26 = 100; calendar year index 2025 = 100",
+  "licence": "Open Government Licence v3.0",
+  "conversion": "Columns copied from the published workbook without change; financial years written with a slash (2024/25) to match ledger.json."
+}

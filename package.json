@@ -1,0 +1,27 @@
+{
+  "name": "prevention-costs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prevention Returns Ledger: what late intervention costs UK public systems and what prevention returns.",
+  "license": "MIT",
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "dev": "npm run validate && astro dev",
+    "build": "npm run validate && astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/eb-garamond": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.0",
+    "astro": "^5.18.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
