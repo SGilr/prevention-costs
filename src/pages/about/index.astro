@@ -12,7 +12,7 @@ import { SITE, REVIEW } from '../../site-config';
     <div class="prose">
       <h2 id="h-who">Publisher and author</h2>
       <p>The ledger is published by {SITE.publisher}. It was compiled by {SITE.author}.</p>
-      <p class="review">{REVIEW.confirmed ? '' : '[Placeholder, not yet confirmed] '}Brain injury entries ({REVIEW.entries.join(', ')}) reviewed by {REVIEW.reviewer}.</p>
+      {REVIEW.confirmed && <p>Brain injury entries ({REVIEW.entries.join(', ')}) reviewed by {REVIEW.reviewer}.</p>}
       <p>Contact: <span class="num">{SITE.contact}</span></p>
     </div>
   </section>

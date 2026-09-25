@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this ledger, please cite it as below. Cite the original source for any individual figure."
+type: dataset
+title: "Prevention Returns Ledger"
+version: "1.0.0"
+date-released: "2026-09-25"
+url: "https://returns.howpreventionworks.com"
+repository-code: "https://github.com/SGilr/prevention-costs"
+license: CC-BY-4.0
+authors:
+  - family-names: Gilmour
+    given-names: Stan
+contact:
+  - name: "Prevention Informatics, a division of Oxon Advisory"
+    email: admin@oxonadvisory.com
+keywords:
+  - prevention
+  - early intervention
+  - cost of late intervention
+  - return on investment
+  - lifecourse
+  - neurodevelopment

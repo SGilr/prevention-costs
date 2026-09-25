@@ -53,10 +53,12 @@ import meta from '../../data/deflators.meta.json';
       )}
     </div>
   </section>
-  <section aria-labelledby="h-review">
-    <div class="sechead">
-      <h2 id="h-review">Review</h2>
-      <p class="review">{REVIEW.confirmed ? '' : '[Placeholder, not yet confirmed] '}Brain injury entries reviewed by {REVIEW.reviewer} ({REVIEW.entries.join(', ')}).</p>
-    </div>
-  </section>
+  {REVIEW.confirmed && (
+    <section aria-labelledby="h-review">
+      <div class="sechead">
+        <h2 id="h-review">Review</h2>
+        <p>Brain injury entries reviewed by {REVIEW.reviewer} ({REVIEW.entries.join(', ')}).</p>
+      </div>
+    </section>
+  )}
 </Base>

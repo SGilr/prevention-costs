@@ -19,13 +19,15 @@ export const SITE = {
   // Cookieless. Set up manually for returns.howpreventionworks.com on 25 September 2026.
   // Empty string turns the beacon off.
   analyticsToken: '6bd54de6f80247dcaf86251b3a387b30',
-  // Keep false until the site is launched on the custom domain. While false every page
-  // carries noindex and a site-wide X-Robots-Tag header is written.
-  indexable: false,
+  // Launched 25 September 2026. Set false to hide the site from search engines again: every
+  // page then carries noindex, a site-wide X-Robots-Tag header is written, and robots.txt
+  // disallows crawling.
+  indexable: true,
 };
 
-// Brain injury entries reviewed by Huw Williams. `confirmed` stays false, and the credit is
-// shown as a marked placeholder, until Stan confirms the review is complete and the styling.
+// Brain injury entries reviewed by Huw Williams. The credit is hidden while `confirmed` is false.
+// Launched without it on 25 September 2026; set to true (and the reviewer's styling) once Stan
+// confirms the review is complete. It then shows on H15-H18, I22, /method/ and /about/.
 export const REVIEW = {
   reviewer: 'Huw Williams',
   entries: ['H15', 'H16', 'H17', 'H18', 'I22'],

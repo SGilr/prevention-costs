@@ -5,6 +5,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { ledgerSchema } from '../src/lib/schema';
 import { calcParams } from '../src/lib/params';
 import { rebaseSchema } from '../src/lib/rebase-schema';
+import { citationCff } from '../src/lib/citation';
 
 const fail = (msg: string) => {
   console.error(`\n✗ ${msg}\n`);
@@ -69,3 +70,7 @@ if (existsSync('src/data/rebase.json')) {
   for (const e of rb.data!.entries) if (!ids.has(e.id)) fail(`rebase.json refers to missing id ${e.id}`);
   console.log(`✓ rebase.json: ${rb.data!.entries.length} entries, status "${rb.data!.status}"`);
 }
+
+if (!existsSync('CITATION.cff') || readFileSync('CITATION.cff', 'utf8') !== citationCff())
+  fail('CITATION.cff in the repository root is missing or out of date: run npm run citation');
+console.log('✓ CITATION.cff matches src/lib/citation.ts');

@@ -17,7 +17,8 @@ const { r } = Astro.props as { r: Row };
 const related = ROWS.filter((x) => x.stage === r.stage && x.id !== r.id);
 const pocket = LEDGER.pocket.find((p) => p.id === r.id);
 const { rebased, reason } = rebasedFor(r);
-const reviewed = REVIEW.entries.includes(r.id);
+// Shown only once Stan confirms the review (REVIEW.confirmed in site-config).
+const reviewed = REVIEW.confirmed && REVIEW.entries.includes(r.id);
 const desc = `${r.item}: ${r.measure.toLowerCase()}. ${r.value}. Grade ${r.grade}, ${r.source}.`.slice(0, 300);
 ---
 <Base title={`${r.id}: ${r.item}`} description={desc} og={`/og/${slug(r.id)}.png`}>
@@ -93,11 +94,7 @@ const desc = `${r.item}: ${r.measure.toLowerCase()}. ${r.value}. Grade ${r.grade
       </section>
 
       {reviewed && (
-        <p class="review" data-placeholder={!REVIEW.confirmed ? 'true' : undefined}>
-          {REVIEW.confirmed
-            ? <>Brain injury entries reviewed by {REVIEW.reviewer}.</>
-            : <>[Placeholder, not yet confirmed] Brain injury entries reviewed by {REVIEW.reviewer}.</>}
-        </p>
+        <p class="muted">Brain injury entries reviewed by {REVIEW.reviewer}.</p>
       )}
     </div>
 

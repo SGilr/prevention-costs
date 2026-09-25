@@ -1,12 +1,14 @@
 # Changelog
 
-## v1.0.0 (unreleased)
+## v1.0.0 (25 September 2026)
 
 - First release of the site, generated from the ledger approved on 25 September 2026.
 - 87 entries: 36 harm costs, 35 interventions, 7 valuation parameters and 9 forecasts.
 - Sources checked 25 September 2026.
 - Pages: home, lifecourse map, filterable ledger, one page per entry, who pays, values, scenario calculator, method, downloads and about.
-- Downloads: `ledger.json`, `ledger.csv`, the Excel workbook and `CITATION.cff`.
+- Downloads: `ledger.json`, `ledger.csv`, the Excel workbook and `CITATION.cff` (also in the repository root).
+- Launched on https://returns.howpreventionworks.com, open to search engines, with cookieless Cloudflare Web Analytics. `prevention-costs.pages.dev` redirects to it.
+- The brain injury review credit for Huw Williams is held back until the review is confirmed.
 - Data corrections, approved by Stan Gilmour on 25 September 2026: H01 price year `2016` → `2016/17` (EIF report p.13: "£16.6bn (2016‐17 prices)"); H12 price year `2024` → `2023/24` (IPPR report, footnote 23: "a 'present value' in 2023/24 prices"). I05 price year `2012/13` → `2013` (Corbacho et al., accepted manuscript: "expressed in UK pounds sterling (2013 GBP)"). The same cells updated in the workbook.
 - Data changes from the query review, approved by Stan Gilmour on 25 September 2026 (details in DATA-QUERIES.md):
   - I17 revised from YEF's current "Formal pre-court diversion" strand. It was: "Pre-court diversion", −13% reoffending (high confidence), low cost, result "Effective, low cost", place "Mostly US".

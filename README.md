@@ -53,11 +53,17 @@ Deployment runs through GitHub Actions to the Cloudflare Pages project `preventi
 
 The repository needs two secrets, `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
-Until launch, `indexable` in `src/site-config.ts` is `false`. This adds `noindex` to every page and an `X-Robots-Tag` header to every response, and `robots.txt` disallows all crawling. Set it to `true` when the site is live on the custom domain.
+The site was launched on 25 September 2026 with `indexable: true` in `src/site-config.ts`. Setting it to `false` adds `noindex` to every page and an `X-Robots-Tag` header to every response, and makes `robots.txt` disallow all crawling.
+
+`prevention-costs.pages.dev` redirects (301, path and query kept) to `returns.howpreventionworks.com` through a Cloudflare Bulk Redirect named `prevention_costs_pages_dev`, set in the dashboard, not in this repository. Preview deployments (`<id>.prevention-costs.pages.dev`) are not redirected.
 
 ### Known behaviour on the custom domain
 
-The howpreventionworks.com zone's Cloudflare security settings block some scripted requests on `returns.howpreventionworks.com`. As checked on 25 September 2026, curl, Python `requests` and requests with no user agent get a 403 block page. Browsers, R and Wget are allowed. Anyone scripting a download can use R, Wget or a browser, or fetch from `prevention-costs.pages.dev` until launch. If this becomes a problem, add a WAF skip rule for `/downloads/*` and `/CITATION.cff` on the `returns` hostname rather than relaxing the whole zone. The zone also injects a Cloudflare script, which the site's Content-Security-Policy blocks; visitors see no effect.
+The howpreventionworks.com zone's Cloudflare security settings block some scripted requests on `returns.howpreventionworks.com`. As checked on 25 September 2026, curl, Python `requests` and requests with no user agent get a 403 block page. Browsers, R and Wget are allowed. Anyone scripting a download can use R, Wget or a browser. If this becomes a problem, add a WAF skip rule for `/downloads/*` and `/CITATION.cff` on the `returns` hostname rather than relaxing the whole zone. The zone also injects a Cloudflare script, which the site's Content-Security-Policy blocks; visitors see no effect.
+
+### Analytics
+
+Cloudflare Web Analytics, cookieless, set up manually for `returns.howpreventionworks.com`. The beacon token is `analyticsToken` in `src/site-config.ts`; an empty string turns it off. Do not also switch on Cloudflare's automatic setup for this hostname, or visits are counted twice.
 
 ## Updating the data
 

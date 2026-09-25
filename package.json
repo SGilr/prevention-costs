@@ -15,7 +15,8 @@
     "links": "tsx scripts/check-links.ts",
     "a11y": "pa11y-ci --config .pa11yci.json",
     "sources": "tsx scripts/check-sources.ts",
-    "rebase:review": "tsx scripts/rebase-review.ts"
+    "rebase:review": "tsx scripts/rebase-review.ts",
+    "citation": "tsx scripts/citation.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
