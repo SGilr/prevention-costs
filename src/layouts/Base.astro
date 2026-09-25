@@ -6,6 +6,11 @@ import '@fontsource/source-sans-3/600.css';
 import '@fontsource/source-sans-3/700.css';
 import '../styles/global.css';
 import { SITE, NAV } from '../site-config';
+// Preload the three faces used above the fold so the swap from fallback fonts does not
+// shift the layout. These resolve to the same hashed files the @fontsource CSS uses.
+import serif600 from '@fontsource/eb-garamond/files/eb-garamond-latin-600-normal.woff2?url';
+import sans400 from '@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url';
+import sans600 from '@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2?url';
 
 interface Props {
   title: string;
@@ -25,6 +30,7 @@ const current = (href: string) => path === href || (href !== '/' && path.startsW
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {[serif600, sans400, sans600].map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
   <title>{fullTitle}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
