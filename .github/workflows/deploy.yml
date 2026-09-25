@@ -28,14 +28,23 @@ jobs:
       contents: read
       deployments: write
       pull-requests: write
+    env:
+      # Deployment is skipped, not failed, until the Cloudflare secrets have been added.
+      HAS_CF: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     steps:
+      - name: Cloudflare secrets not set
+        if: env.HAS_CF != 'true'
+        run: echo "::notice::CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID is not set, so nothing was deployed."
+
       - uses: actions/download-artifact@v4
+        if: env.HAS_CF == 'true'
         with:
           name: dist
           path: dist
 
       - name: Deploy
         id: deploy
+        if: env.HAS_CF == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -43,8 +52,9 @@ jobs:
           command: pages deploy dist --project-name=prevention-costs --branch=${{ github.head_ref || github.ref_name }}
 
       - name: Post the preview address on the pull request
-        if: github.event_name == 'pull_request'
+        if: env.HAS_CF == 'true' && github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
           URL: ${{ steps.deploy.outputs.deployment-url }}
-        run: gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body "Preview deployed: $URL"
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body "Preview deployed: $URL"
