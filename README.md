@@ -55,6 +55,10 @@ The repository needs two secrets, `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT
 
 Until launch, `indexable` in `src/site-config.ts` is `false`. This adds `noindex` to every page and an `X-Robots-Tag` header to every response, and `robots.txt` disallows all crawling. Set it to `true` when the site is live on the custom domain.
 
+### Known behaviour on the custom domain
+
+The howpreventionworks.com zone's Cloudflare security settings block some scripted requests on `returns.howpreventionworks.com`. As checked on 25 September 2026, curl, Python `requests` and requests with no user agent get a 403 block page. Browsers, R and Wget are allowed. Anyone scripting a download can use R, Wget or a browser, or fetch from `prevention-costs.pages.dev` until launch. If this becomes a problem, add a WAF skip rule for `/downloads/*` and `/CITATION.cff` on the `returns` hostname rather than relaxing the whole zone. The zone also injects a Cloudflare script, which the site's Content-Security-Policy blocks; visitors see no effect.
+
 ## Updating the data
 
 See [UPDATING.md](UPDATING.md). Open queries about the data are in [DATA-QUERIES.md](DATA-QUERIES.md).
