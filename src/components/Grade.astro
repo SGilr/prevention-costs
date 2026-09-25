@@ -1,0 +1,5 @@
+---
+interface Props { grade: string }
+const { grade } = Astro.props;
+---
+<span class={`grade g-${grade}`} title={`Evidence grade ${grade}`}><span class="visually-hidden">Evidence grade </span>{grade}</span>

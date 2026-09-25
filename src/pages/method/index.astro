@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LEDGER } from '../../lib/ledger';
+import { REBASE_ACTIVE, REBASE_LABEL } from '../../lib/rebase';
+import { SITE, REVIEW } from '../../site-config';
+import meta from '../../data/deflators.meta.json';
+---
+<Base title="Method, grading and gaps" description="Evidence grades, how results are defined, the handling rules for comparing figures, known gaps in the evidence, and when sources were checked.">
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>Method, Grading and Gaps</h1>
+    <p class="lede">Every source was checked on {SITE.sourcesChecked}. Each entry records its figure exactly as the source reports it, with the source's price year, study design and place.</p>
+  </div>
+  <section aria-label="Method">
+    <div class="method">
+      <div class="panel">
+        <h2 id="grades">Evidence grades</h2>
+        <div class="gradekey">
+          <div><span class="grade g-A">A</span><span>Official statistics, UK randomised trial or systematic review</span></div>
+          <div><span class="grade g-B">B</span><span>Peer-reviewed cohort, quasi-experimental study or official evaluation</span></div>
+          <div><span class="grade g-C">C</span><span>Modelled estimate (peer-reviewed, think tank or charity), or an international effect with no UK cost</span></div>
+          <div><span class="grade g-D">D</span><span>Secondary citation; primary source not seen</span></div>
+        </div>
+        <h2 id="results">Reading the results</h2>
+        <ul>
+          <li>Pays back: a benefit-cost ratio above 1 or a cost saving, from the perspective the source states.</li>
+          <li>Cost-effective: cost per QALY within the NICE range, which rose to £25,000–£35,000 in April 2026.</li>
+          <li>Effective: a measured effect on crime, violence or health with no complete cost analysis.</li>
+          <li>Human security tags (freedom from want, freedom from fear, freedom to live in dignity) are our classification, applied to help cross-system reading.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2 id="gaps">Known gaps</h2>
+        <ul>{LEDGER.gaps.map((g) => <li>{g}</li>)}</ul>
+        <h2 id="rules">Handling rules</h2>
+        <ul>
+          <li>Figures are not rebased to a common price year. Rebase before comparing across rows.{REBASE_ACTIVE && <> Where an entry shows a figure in 2025/26 prices, that figure is labelled "{REBASE_LABEL}" and sits alongside the source's own figure.</>}</li>
+          <li>Harm costs overlap heavily (maltreatment, mental ill health, crime and NEET costs share people and pathways), so they must never be summed.</li>
+          <li>Cash returns and QALY values come from different frameworks. Combining them needs a stated assumption.</li>
+          <li>Calculator outputs are illustrative arithmetic on sourced ratios, not new estimates.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section aria-labelledby="h-prices">
+    <div class="sechead">
+      <h2 id="h-prices">Price years and rebasing</h2>
+      {REBASE_ACTIVE ? (
+        <p>Where an entry has a single £ figure and a stated financial or calendar year, the entry page also shows it in 2025/26 prices using the {meta.publisher} series "{meta.title}", downloaded {meta.downloaded}. Financial-year figures are divided by that year's index (2025/26 = 100). For a calendar year, the index is weighted a quarter to the financial year ending that March and three quarters to the one starting in April. Ratios, percentages, counts, DALYs and US$ figures are not rebased, and nor are figures whose price year is not stated, approximate or a range.</p>
+      ) : (
+        <p>Each figure is shown in the price year its source reports. A second column in 2025/26 prices, calculated with the HM Treasury GDP deflator series, is in preparation and will be clearly labelled as an Oxon Advisory calculation.</p>
+      )}
+    </div>
+  </section>
+  <section aria-labelledby="h-review">
+    <div class="sechead">
+      <h2 id="h-review">Review</h2>
+      <p class="review">{REVIEW.confirmed ? '' : '[Placeholder, not yet confirmed] '}Brain injury entries reviewed by {REVIEW.reviewer} ({REVIEW.entries.join(', ')}).</p>
+    </div>
+  </section>
+</Base>

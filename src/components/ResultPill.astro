@@ -1,0 +1,9 @@
+---
+import { RES } from '../lib/ledger';
+import type { Row } from '../lib/ledger';
+interface Props { row: Row }
+const { row } = Astro.props;
+---
+{row.result
+  ? <span class={`pill ${RES[row.result]}`}><i class="dot" aria-hidden="true"></i>{row.result}</span>
+  : <span class="kindtag">{row.kind}</span>}

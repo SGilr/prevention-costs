@@ -50,12 +50,5 @@ export const countKind = (k: string) => ROWS.filter((r) => r.kind === k).length;
 /** Harvard-style reference built from the ledger's own source and URL fields. */
 export const harvard = (r: Row) => `${r.source}. Available at: ${r.url} (Accessed: ${SITE.sourcesChecked}).`;
 
-/** Suggested citation for the ledger, or for one entry when an id is given. */
-export function citeLedger(id?: string) {
-  const base = `${SITE.authorCitation} (${SITE.year}) Prevention Returns Ledger`;
-  const pub = `${SITE.publisherShort}.`;
-  if (!id) return { base, pub, url: SITE.url };
-  return { base: `${base}, entry ${id}`, pub, url: `${SITE.url}${entryHref(id)}` };
-}
 
 export type { Row };

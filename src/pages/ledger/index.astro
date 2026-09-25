@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import LedgerRow from '../../components/LedgerRow.astro';
+import { ROWS, STAGES, RESGROUP, HS } from '../../lib/ledger';
+import { KINDS, GRADES } from '../../lib/schema';
+const domains = [...new Set(ROWS.map((r) => r.domain).filter(Boolean))].sort() as string[];
+const filters = [
+  { id: 'kind', label: 'Entry type', all: 'All types', opts: KINDS.map((k) => [k, k]) },
+  { id: 'stage', label: 'Life stage', all: 'All stages', opts: STAGES.map((s) => [s[0], `${s[1]} (${s[2]})`]) },
+  { id: 'domain', label: 'System', all: 'All systems', opts: domains.map((d) => [d, d]) },
+  { id: 'result', label: 'Result', all: 'Any result', opts: RESGROUP },
+  { id: 'grade', label: 'Evidence grade', all: 'Any grade', opts: GRADES.map((g) => [g, `Grade ${g}`]) },
+  { id: 'hs', label: 'Human security', all: 'All', opts: Object.entries(HS) },
+];
+---
+<Base title="The ledger" description="All harm costs, interventions, valuation parameters and forecasts in one filterable list, each with its source, price year, design and evidence grade.">
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>The Ledger</h1>
+    <p class="lede">Harm costs, interventions, valuation parameters and forecasts in one list. Figures come from different years, prices, perspectives and jurisdictions, so compare within a row rather than adding across rows.</p>
+  </div>
+  <section aria-label="Filters and entries">
+    <form class="filters" role="search" id="filters" action="/ledger/" method="get">
+      <label for="f-q">Search<input id="f-q" name="q" type="search" placeholder="e.g. brain injury, QALY" autocomplete="off"></label>
+      {filters.map((f) => (
+        <label for={`f-${f.id}`}>{f.label}
+          <select id={`f-${f.id}`} name={f.id}>
+            <option value="">{f.all}</option>
+            {f.opts.map(([v, l]) => <option value={v}>{l}</option>)}
+          </select>
+        </label>
+      ))}
+      <noscript><button type="submit">Apply filters</button></noscript>
+    </form>
+    <div class="filterbar">
+      <span id="shown" class="num" role="status" aria-live="polite">Showing {ROWS.length} of {ROWS.length} entries</span>
+      <span class="acts"><button class="link" id="copylink" type="button" hidden>Copy link to this view</button><button class="link" id="reset" type="button">Clear filters</button></span>
+    </div>
+    <div class="ledger" id="rows">
+      {ROWS.map((r) => <LedgerRow row={r} />)}
+      <div class="empty" id="empty" hidden>No entries match these filters. Clear a filter to see more.</div>
+    </div>
+  </section>
+  <script>
+    import '../../scripts/ledger-filters';
+  </script>
+</Base>

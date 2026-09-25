@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+import Grade from '../../components/Grade.astro';
+import ResultPill from '../../components/ResultPill.astro';
+import Flow from '../../components/Flow.astro';
+import Cite from '../../components/Cite.astro';
+import { ROWS, LEDGER, stageName, stageAge, HS, slug, entryHref, harvard } from '../../lib/ledger';
+import type { Row } from '../../lib/ledger';
+import { rebasedFor, fmtRebased, REBASE_LABEL } from '../../lib/rebase';
+import { SITE, REVIEW } from '../../site-config';
+
+export function getStaticPaths() {
+  return ROWS.map((r) => ({ params: { id: slug(r.id) }, props: { r } }));
+}
+const { r } = Astro.props as { r: Row };
+const related = ROWS.filter((x) => x.stage === r.stage && x.id !== r.id);
+const pocket = LEDGER.pocket.find((p) => p.id === r.id);
+const { rebased, reason } = rebasedFor(r);
+const reviewed = REVIEW.entries.includes(r.id);
+const desc = `${r.item}: ${r.measure.toLowerCase()}. ${r.value}. Grade ${r.grade}, ${r.source}.`.slice(0, 300);
+---
+<Base title={`${r.id}: ${r.item}`} description={desc} og={`/og/${slug(r.id)}.png`}>
+  <p class="crumbs"><a href="/ledger/">Ledger</a> / <a href={`/ledger/?kind=${encodeURIComponent(r.kind)}`}>{r.kind}</a> / {r.id}</p>
+  <div class="entryhead">
+    <p class="eyebrow">{r.kind} · {r.id}</p>
+    <h1>{r.item}</h1>
+    <div class="meta">
+      <ResultPill row={r} />
+      <span><Grade grade={r.grade} /> <a href="/method/#grades">Evidence grade {r.grade}</a></span>
+      <span>{stageName[r.stage]} ({stageAge[r.stage]})</span>
+      {r.domain && <span>{r.domain}</span>}
+      {r.hs && <span>{HS[r.hs]}</span>}
+    </div>
+  </div>
+
+  <div class="entrygrid">
+    <div>
+      <section aria-labelledby="h-fig">
+        <h2 id="h-fig">Figure as reported</h2>
+        <div class="figure">
+          <small>{r.measure}</small>
+          <span class="v">{r.value}</span>
+          <span class="muted">Price year as reported: {r.year}</span>
+        </div>
+        {rebased && (
+          <div class="figure rebased">
+            <small>{REBASE_LABEL}</small>
+            <span class="v">{fmtRebased(rebased.rebased)}</span>
+            <span class="muted">Rebased from {rebased.figure} in {rebased.priceYear} prices. {rebased.note}</span>
+          </div>
+        )}
+        {reason && <p class="muted">2025/26 prices: {reason}.</p>}
+      </section>
+
+      <section aria-labelledby="h-detail">
+        <h2 id="h-detail">Details</h2>
+        <dl class="fields">
+          <dt>Measure</dt><dd>{r.measure}</dd>
+          {r.result && <><dt>Result</dt><dd>{r.result}</dd></>}
+          <dt>Design</dt><dd>{r.design}</dd>
+          <dt>Where</dt><dd>{r.place}</dd>
+          <dt>Price year</dt><dd>{r.year}</dd>
+          <dt>Life stage</dt><dd>{stageName[r.stage]} ({stageAge[r.stage]})</dd>
+          {r.windowLabel && <><dt>Window</dt><dd>{r.windowLabel}</dd></>}
+          {r.domain && <><dt>System</dt><dd>{r.domain}</dd></>}
+          {r.hs && <><dt>Human security</dt><dd>{HS[r.hs]}</dd></>}
+          {r.note && <><dt>Note</dt><dd>{r.note}</dd></>}
+          <dt>Source</dt><dd><a href={r.url} rel="noopener">{r.source}</a></dd>
+        </dl>
+      </section>
+
+      {r.kind === 'Intervention' && (
+        <section aria-labelledby="h-flow">
+          <h2 id="h-flow">Who pays and who benefits</h2>
+          <p><Flow row={r} /></p>
+          {pocket && <p class="muted">{pocket.text}</p>}
+          <p><a href="/who-pays/">All interventions by payer and beneficiary</a></p>
+        </section>
+      )}
+
+      {r.calc && (
+        <section aria-labelledby="h-calc">
+          <h2 id="h-calc">Scenario calculator</h2>
+          <p>This entry has a published ratio. <a href={`/calculator/?int=${r.id}`}>Apply it to a spend or caseload</a>.</p>
+        </section>
+      )}
+
+      <section aria-labelledby="h-ref">
+        <h2 id="h-ref">Source reference</h2>
+        <div class="cite"><p>{harvard(r)}</p></div>
+      </section>
+
+      {reviewed && (
+        <p class="review" data-placeholder={!REVIEW.confirmed ? 'true' : undefined}>
+          {REVIEW.confirmed
+            ? <>Brain injury entries reviewed by {REVIEW.reviewer}.</>
+            : <>[Placeholder, not yet confirmed] Brain injury entries reviewed by {REVIEW.reviewer}.</>}
+        </p>
+      )}
+    </div>
+
+    <aside aria-labelledby="h-cite">
+      <section aria-labelledby="h-cite">
+        <h2 id="h-cite">Cite this entry</h2>
+        <Cite id={r.id}><p class="muted">Cite the original source for the figure itself: {r.source}.</p></Cite>
+      </section>
+      <section aria-labelledby="h-rel">
+        <h2 id="h-rel">Also at this stage</h2>
+        <ul class="related">
+          {related.map((x) => (
+            <li><a href={entryHref(x.id)}><b>{x.id}</b> {x.short || x.item}<small>{x.kind}{x.result ? `, ${x.result}` : ''}</small></a></li>
+          ))}
+        </ul>
+      </section>
+    </aside>
+  </div>
+</Base>

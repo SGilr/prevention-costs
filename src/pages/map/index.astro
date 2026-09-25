@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import Legend from '../../components/Legend.astro';
+import { ROWS, STAGES, WINDOWS, RES, RESORDER, entryHref } from '../../lib/ledger';
+
+const cellRow = WINDOWS.length + 3;
+const cells = STAGES.map((s) => ({
+  stage: s,
+  ints: ROWS.filter((r) => r.kind === 'Intervention' && r.stage === s[0]).sort(
+    (a, b) => RESORDER.indexOf(RES[a.result!]) - RESORDER.indexOf(RES[b.result!]),
+  ),
+  harms: ROWS.filter((r) => r.kind === 'Harm cost' && r.stage === s[0]),
+}));
+---
+<Base title="Lifecourse map" description="Seven life stages and the neurodevelopmental windows they touch, with interventions grouped by what the evidence shows and harm costs beneath.">
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>Lifecourse Map</h1>
+    <p class="lede">Stages run across; shaded bands show the neurodevelopmental windows each stage touches. Coloured chips are interventions, grouped by what the evidence shows. Harm costs sit beneath. Select any item to open its ledger entry.</p>
+  </div>
+  <section aria-label="Map">
+    <Legend harms />
+    <div class="mapscroll" tabindex="0" role="region" aria-label="Lifecourse map, scrolls sideways on small screens">
+      <div class="map">
+        {STAGES.map((s, i) => (
+          <div class={`stagehead col-${i + 1}${s[0] === 'life' ? ' lifecol' : ''}`}>
+            <h2>{s[1]}</h2><span>{s[2]}</span>
+          </div>
+        ))}
+        <div class="wintitle" aria-hidden="true">Neurodevelopmental windows</div>
+        {WINDOWS.map(([, label, sub, a, b], wi) => (
+          <div class={`winrow row-${wi + 3} cs-${a} ce-${b}`}>
+            <div class="win">{label}{sub && <i> · {sub}</i>}</div>
+          </div>
+        ))}
+        {cells.map(({ stage, ints, harms }, si) => (
+          <div class={`cell row-${cellRow} col-${si + 1}${stage[0] === 'life' ? ' lifecol' : ''}`} aria-label={stage[1]} role="group">
+            {ints.length > 0 && <span class="celllabel">What works, and what did not</span>}
+            {ints.map((r) => (
+              <a class={`chip ${RES[r.result!]}`} href={entryHref(r.id)} title={`${r.result}: ${r.value}`}>
+                {r.short || r.item}<span class="visually-hidden">, {r.result}</span>
+              </a>
+            ))}
+            {harms.length > 0 && <span class="celllabel gap">Harm costs</span>}
+            {harms.map((r) => (
+              <a class="harmitem" href={entryHref(r.id)}>{r.short || r.item}{r.headline && <> <b>{r.headline}</b></>}</a>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+    <p class="mapnote">Windows are organising labels drawn from developmental science, not claims about causation. Acquired brain injury can occur at any age; the band starts at early years because that is where the earliest costed evidence here begins.</p>
+  </section>
+</Base>

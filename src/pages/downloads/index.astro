@@ -1,0 +1,48 @@
+---
+import { existsSync, statSync } from 'node:fs';
+import Base from '../../layouts/Base.astro';
+import { ROWS } from '../../lib/ledger';
+import { datasetLd } from '../../lib/jsonld';
+import { REBASE_ACTIVE } from '../../lib/rebase';
+import Cite from '../../components/Cite.astro';
+import { SITE } from '../../site-config';
+const XLSX = 'public/downloads/prevention-returns-ledger.xlsx';
+const xlsxKb = existsSync(XLSX) ? Math.round(statSync(XLSX).size / 1024) : 0;
+---
+<Base title="Downloads" description="The full ledger as JSON, CSV and an editable Excel workbook, with a citation file." jsonld={datasetLd()}>
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>Downloads</h1>
+    <p class="lede">All {ROWS.length} entries, generated from the same file as every page on this site. Version {SITE.version}, sources checked {SITE.sourcesChecked}.</p>
+  </div>
+  <section aria-labelledby="h-files">
+    <h2 id="h-files" class="visually-hidden">Files</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3><a href="/downloads/ledger.json" download>ledger.json</a></h3>
+        <p>The source file for the site, with a short header describing the licence and handling rules. {REBASE_ACTIVE && 'Figures in 2025/26 prices are in a separate, labelled block and never replace a source value.'}</p>
+      </div>
+      <div class="panel">
+        <h3><a href="/downloads/ledger.csv" download>ledger.csv</a></h3>
+        <p>One row per entry, generated at build from the JSON. UTF-8 with a byte-order mark so that Excel reads £ signs correctly. {REBASE_ACTIVE ? 'Rebased figures sit in their own columns, labelled as our calculation.' : ''}</p>
+      </div>
+      <div class="panel">
+        {xlsxKb
+          ? <h3><a href="/downloads/prevention-returns-ledger.xlsx" download>prevention-returns-ledger.xlsx</a> <span class="muted">({xlsxKb} KB)</span></h3>
+          : <h3>prevention-returns-ledger.xlsx</h3>}
+        <p>{xlsxKb ? 'The editable workbook version of the ledger.' : 'The editable workbook will be added here shortly.'}</p>
+      </div>
+      <div class="panel">
+        <h3><a href="/CITATION.cff" download>CITATION.cff</a></h3>
+        <p>Citation metadata in the Citation File Format, read by GitHub, Zenodo and reference managers.</p>
+      </div>
+    </div>
+  </section>
+  <section aria-labelledby="h-cite">
+    <div class="sechead">
+      <h2 id="h-cite">Suggested citation</h2>
+      <Cite />
+      <p>Data and site text are licensed under <a href={SITE.dataLicence.url} rel="license">{SITE.dataLicence.name}</a>. The licence covers the compilation, grading and classification. Each figure remains attributed to its original source, which should be cited for the figure itself.</p>
+    </div>
+  </section>
+</Base>

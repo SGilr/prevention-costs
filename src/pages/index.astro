@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { ROWS, countKind } from '../lib/ledger';
+import { datasetLd } from '../lib/jsonld';
+import { SITE } from '../site-config';
+const gradeA = ROWS.filter((r) => r.grade === 'A').length;
+---
+<Base title={SITE.title} description="What late intervention costs UK public systems, which preventive interventions have economic evidence, and what they return in cash, QALYs and DALYs. Every figure is sourced and graded." jsonld={datasetLd()}>
+  <header class="top">
+    <p class="eyebrow">{SITE.publisherShort} · Evidence ledger · {SITE.sourcesChecked}</p>
+    <h1>Prevention Returns Ledger</h1>
+    <p class="lede">What late intervention costs UK systems, which preventive actions have economic evidence behind them, where they sit across the lifecourse and neurodevelopmental windows, and what they return in cash, QALYs and DALYs. Every figure links to the source it was checked against.</p>
+    <div class="keyread">
+      <div><h2>Returns cluster early</h2><p>The strongest cash returns and cost-saving results sit in pregnancy, the early years and at points of family crisis: smoking cessation incentives, parenting programmes, Sure Start and Pause.</p></div>
+      <div><h2>Savings land in other budgets</h2><p>Most interventions are paid for by one system and repay another, often a decade later. Parenting programme savings fall across education, health, social care and justice.</p></div>
+      <div><h2>Some well-known models failed UK trials</h2><p>Family Nurse Partnership, Multisystemic Therapy and Functional Family Therapy did not beat usual care in England. Evidence quality matters as much as the headline return.</p></div>
+    </div>
+    <ul class="counts" aria-label="Entries in the ledger">
+      <li><b>{countKind('Harm cost')}</b> harm costs</li>
+      <li><b>{countKind('Intervention')}</b> interventions</li>
+      <li><b>{countKind('Valuation parameter')}</b> valuation parameters</li>
+      <li><b>{countKind('Forecast')}</b> forecasts</li>
+      <li><b>{gradeA}</b> grade A entries</li>
+    </ul>
+    <p class="cta"><a class="btn" href="/map/">Open the lifecourse map</a> <a class="btn alt" href="/ledger/">Search the ledger</a></p>
+  </header>
+  <section aria-labelledby="h-read">
+    <div class="sechead">
+      <h2 id="h-read">Reading the ledger</h2>
+      <p>Figures come from different years, prices, perspectives and jurisdictions. Compare within an entry rather than adding across entries. Harm costs overlap and must never be summed, and the calculator applies published ratios as illustrative arithmetic, not new estimates. The <a href="/method/">method page</a> sets out the grades and handling rules.</p>
+    </div>
+  </section>
+</Base>

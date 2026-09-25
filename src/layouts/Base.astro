@@ -1,0 +1,77 @@
+---
+import '@fontsource/eb-garamond/500.css';
+import '@fontsource/eb-garamond/600.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/600.css';
+import '@fontsource/source-sans-3/700.css';
+import '../styles/global.css';
+import { SITE, NAV } from '../site-config';
+
+interface Props {
+  title: string;
+  description: string;
+  og?: string;
+  jsonld?: object;
+}
+const { title, description, og = '/og/site.png', jsonld } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, SITE.url).href;
+const fullTitle = path === '/' ? SITE.title : `${title} | ${SITE.title}`;
+const ogUrl = new URL(og, SITE.url).href;
+const current = (href: string) => path === href || (href !== '/' && path.startsWith(href));
+---
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  {!SITE.indexable && <meta name="robots" content="noindex, nofollow">}
+  <meta name="author" content={SITE.author}>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#1D2B4F">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content={SITE.title}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogUrl}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <script is:inline src="/theme.js"></script>
+  {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  {SITE.analyticsToken && (
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: SITE.analyticsToken })}></script>
+  )}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">{SITE.title}<small>{SITE.publisherShort}</small></a>
+      <nav class="nav" aria-label="Main">
+        <ul>
+          {NAV.map((n) => <li><a href={n.href} aria-current={current(n.href) ? 'page' : undefined}>{n.label}</a></li>)}
+        </ul>
+      </nav>
+      <button id="themebtn" class="themebtn" type="button" hidden>Theme: system</button>
+    </div>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+    <slot />
+  </main>
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>Published by {SITE.publisher}. Compiled by {SITE.author}. Sources checked {SITE.sourcesChecked}.</span>
+      <span>Data and text: <a href={SITE.dataLicence.url} rel="license">{SITE.dataLicence.name}</a>. Code: <a href={SITE.codeLicence.url}>{SITE.codeLicence.name}</a>. Underlying figures remain attributed to their original sources.</span>
+      <span>Part of <a href={SITE.parent}>howpreventionworks.com</a>. <a href="/about/">About this ledger</a>. Version {SITE.version}.</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+---
+import type { Row } from '../lib/ledger';
+interface Props { row: Row }
+const { row } = Astro.props;
+---
+<span class="flow"><span>{row.payer || 'n/a'}</span> <span class="arrow" aria-hidden="true">→</span><span class="visually-hidden"> repays </span> <span>{row.beneficiary || 'No benefit shown in trial'}</span></span>

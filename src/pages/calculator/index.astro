@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LEDGER, ROWS } from '../../lib/ledger';
+import { calcParams } from '../../lib/params';
+const P = calcParams(LEDGER);
+const CI = ROWS.filter((r) => r.calc).map((r) => ({ id: r.id, name: r.short || r.item, year: r.year, source: r.source, grade: r.grade, calc: r.calc }));
+const data = { P, CI };
+---
+<Base title="Scenario calculator" description="Apply published returns from the ledger to a spend or caseload you choose, value health gains, and run the ACE reduction scenario. Illustrative arithmetic on sourced ratios.">
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>Scenario Calculator</h1>
+    <p class="lede">Applies published ratios to a spend or caseload you choose. The outputs are illustrative arithmetic on sourced parameters, not new estimates. Ratios differ in horizon, perspective and price year, which are shown with each result.</p>
+  </div>
+  <section aria-label="Calculators">
+    <div class="calc">
+      <div class="panel">
+        <h2 id="h-ret">Return on spend</h2>
+        <label for="c-int">Intervention
+          <select id="c-int">{CI.map((r) => <option value={r.id}>{r.name} ({r.id})</option>)}</select>
+        </label>
+        <label for="c-amt"><span id="c-amtlabel">Spend (£)</span><input id="c-amt" type="number" min="0" step="1" inputmode="numeric"></label>
+        <div class="out" id="c-out" aria-live="polite"></div>
+      </div>
+      <div class="panel">
+        <h2 id="h-health">Valuing health gains</h2>
+        <label for="q-n">QALYs gained<input id="q-n" type="number" min="0" step="1" value="100" inputmode="numeric"></label>
+        <div class="out" id="q-out" aria-live="polite"></div>
+        <label for="a-pct">ACE scenario: fall in UK ACE-attributable DALYs (<span id="a-pctv" class="num">10</span>%)<input id="a-pct" type="range" min="1" max="30" step="1" value="10"></label>
+        <div class="out" id="a-out" aria-live="polite"></div>
+      </div>
+    </div>
+    <noscript><p class="warn">The calculator needs JavaScript. The ratios it uses are listed on each intervention's entry page.</p></noscript>
+  </section>
+  <script type="application/json" id="calc-data" set:html={JSON.stringify(data)}></script>
+  <script>
+    import '../../scripts/calculator';
+  </script>
+</Base>

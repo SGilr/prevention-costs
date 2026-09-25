@@ -1,0 +1,8 @@
+---
+import { SITE } from '../site-config';
+import { entryHref } from '../lib/ledger';
+interface Props { id?: string }
+const { id } = Astro.props;
+const url = id ? `${SITE.url}${entryHref(id)}` : SITE.url;
+---
+<div class="cite"><p>{SITE.authorCitation} ({SITE.year}) <em>{SITE.title}</em>{id && `, entry ${id}`}. {SITE.publisherShort}. Available at: {url} (Accessed: [date]).</p><slot /></div>

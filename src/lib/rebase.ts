@@ -1,8 +1,8 @@
 // Rebasing to 2025/26 prices with the HM Treasury GDP deflator series. This is an Oxon
 // Advisory calculation layered on the source figures, never a replacement for them.
 // Nothing is shown on the site until rebase.json has status "signed-off".
-import { readFileSync } from 'node:fs';
 import rebaseRaw from '../data/rebase.json';
+import deflatorsCsv from '../data/deflators.csv?raw';
 import { rebaseSchema } from './rebase-schema';
 import type { Row } from './schema';
 
@@ -12,7 +12,7 @@ export const REBASE_LABEL = rebase.label;
 export const REBASE_METHOD = rebase.method;
 
 const fy = new Map<string, number>();
-for (const line of readFileSync(new URL('../data/deflators.csv', import.meta.url), 'utf8').trim().split('\n').slice(1)) {
+for (const line of deflatorsCsv.trim().split('\n').slice(1)) {
   const [year, idx] = line.split(',');
   if (idx) fy.set(year, Number(idx));
 }

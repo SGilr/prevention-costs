@@ -1,0 +1,9 @@
+---
+import { RESGROUP } from '../lib/ledger';
+interface Props { harms?: boolean }
+const { harms = false } = Astro.props;
+---
+<ul class="legend" aria-label="Key to results">
+  {RESGROUP.map(([k, l]) => <li class={k}><i class="dot" aria-hidden="true"></i>{l}</li>)}
+  {harms && <li>Harm costs listed as text beneath each stage</li>}
+</ul>

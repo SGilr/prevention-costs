@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import { ROWS, entryHref } from '../../lib/ledger';
+const list = (k: string) => ROWS.filter((r) => r.kind === k);
+const groups = [
+  { id: 'params', h: 'Valuation parameters', rows: list('Valuation parameter') },
+  { id: 'forecasts', h: 'Forecasts and projections', rows: list('Forecast') },
+];
+---
+<Base title="Valuation parameters and forecasts" description="The official values used to turn health and wellbeing into money, and the projections that set the scale of future demand.">
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>Valuation Parameters and Forecasts</h1>
+    <p class="lede">The official values used to turn health and wellbeing into money, and the projections that set the scale of future demand.</p>
+  </div>
+  <section aria-label="Parameters and forecasts">
+    <div class="cols">
+      {groups.map((g) => (
+        <div class="panel">
+          <h2 id={g.id}>{g.h}</h2>
+          <div class="plist">
+            {g.rows.map((r) => (
+              <div>
+                <b><a href={entryHref(r.id)}>{r.item}</a></b>
+                <span class="v">{r.value}</span>
+                <small>{r.id} · {r.place} · {r.year} · <a href={r.url} rel="noopener">{r.source}</a>{r.note && ` · ${r.note}`}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cite from '../../components/Cite.astro';
+import { SITE, REVIEW } from '../../site-config';
+---
+<Base title="About" description="Who publishes the Prevention Returns Ledger, how it is maintained, how to cite it, and how the site handles analytics and privacy.">
+  <div class="pagehead">
+    <p class="eyebrow">Prevention Returns Ledger</p>
+    <h1>About the Ledger</h1>
+  </div>
+  <section aria-labelledby="h-who">
+    <div class="prose">
+      <h2 id="h-who">Publisher and author</h2>
+      <p>The ledger is published by {SITE.publisher}. It was compiled by {SITE.author}.</p>
+      <p class="review">{REVIEW.confirmed ? '' : '[Placeholder, not yet confirmed] '}Brain injury entries ({REVIEW.entries.join(', ')}) reviewed by {REVIEW.reviewer}.</p>
+      <p>Contact: <span class="num">{SITE.contact}</span></p>
+    </div>
+  </section>
+  <section aria-labelledby="h-maint">
+    <div class="prose">
+      <h2 id="h-maint">How the ledger is maintained</h2>
+      <p>Every page, table, download and calculator value on this site is generated from one data file. Each entry records a figure exactly as its source reports it, with the source, a link, the price year, the study design and an evidence grade. Sources were last checked on {SITE.sourcesChecked}.</p>
+      <p>Corrections and new entries go through the <a href={SITE.repo}>public repository</a>. The build checks the data file against a schema and stops if an entry is incomplete or malformed. A weekly job tests every source link and opens an issue listing any that have broken; it never edits the data.</p>
+      <p>If you find an error, email the address above with the entry number and the source you checked it against.</p>
+    </div>
+  </section>
+  <section aria-labelledby="h-cite">
+    <div class="prose">
+      <h2 id="h-cite">Citing the ledger</h2>
+      <Cite />
+      <p>Cite the original source for any individual figure. Each entry page gives a reference for its source.</p>
+    </div>
+  </section>
+  <section aria-labelledby="h-lic">
+    <div class="prose">
+      <h2 id="h-lic">Licences</h2>
+      <p>Data and site text: <a href={SITE.dataLicence.url} rel="license">Creative Commons Attribution 4.0 International ({SITE.dataLicence.name})</a>. The licence covers the compilation, grading and classification. Underlying figures remain attributed to their original sources.</p>
+      <p>Site code: <a href={SITE.codeLicence.url}>{SITE.codeLicence.name} licence</a>.</p>
+      <p>Deflator series: HM Treasury, published under the Open Government Licence v3.0.</p>
+    </div>
+  </section>
+  <section aria-labelledby="h-priv">
+    <div class="prose">
+      <h2 id="h-priv">Analytics and privacy</h2>
+      <p>This site uses Cloudflare Web Analytics to count page views. It sets no cookies, does not use local storage for tracking and does not build a profile of visitors. There is no other analytics, advertising or tracking.</p>
+      <p>Fonts are served from this site, so viewing a page makes no request to a third-party font service. The only preference the site stores in your browser is your choice of light or dark theme, if you make one.</p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,32 @@
+---
+import { stageName, HS, entryHref, RES } from '../lib/ledger';
+import type { Row } from '../lib/ledger';
+import Grade from './Grade.astro';
+import ResultPill from './ResultPill.astro';
+interface Props { row: Row }
+const { row: r } = Astro.props;
+const search = [r.id, r.item, r.value, r.measure, r.source, r.note, r.domain, r.windowLabel].join(' ').toLowerCase();
+---
+<details class="row" id={`row-${r.id}`}
+  data-kind={r.kind} data-stage={r.stage} data-domain={r.domain} data-result={r.result ? RES[r.result] : ''}
+  data-grade={r.grade} data-hs={r.hs} data-search={search}>
+  <summary>
+    <span class="rid">{r.id}</span>
+    <span class="ritem"><b>{r.item}</b><span>{stageName[r.stage]} · {r.domain}{r.hs && ` · ${HS[r.hs]}`}</span></span>
+    <span class="rval"><em>{r.measure}</em>{r.value}</span>
+    <span class="rres"><ResultPill row={r} /></span>
+    <span class="rgrade"><Grade grade={r.grade} /></span>
+  </summary>
+  <div class="rbody">
+    <dl class="fields">
+      {(r.payer || r.beneficiary) && <><dt>Pays</dt><dd>{r.payer || 'n/a'}</dd><dt>Benefits</dt><dd>{r.beneficiary || 'No benefit shown in trial'}</dd></>}
+      <dt>Design</dt><dd>{r.design}</dd>
+      <dt>Where</dt><dd>{r.place}</dd>
+      <dt>Price year</dt><dd>{r.year}</dd>
+      {r.windowLabel && <><dt>Window</dt><dd>{r.windowLabel}</dd></>}
+      {r.note && <><dt>Note</dt><dd>{r.note}</dd></>}
+      <dt>Source</dt><dd><a href={r.url} rel="noopener">{r.source}</a></dd>
+    </dl>
+    <p><a href={entryHref(r.id)}>Full entry for {r.id}, with citation</a></p>
+  </div>
+</details>
