@@ -10,6 +10,7 @@ export const rebaseSchema = z
     deflators: z.string(),
     method: z.object({ financial: z.string(), calendar: z.string() }),
     rules: z.string(),
+    checked: z.string().optional(),
     entries: z.array(
       z
         .object({

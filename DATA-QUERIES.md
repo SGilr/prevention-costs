@@ -9,6 +9,13 @@ Things noticed in `src/data/ledger.json` while building the site, 25 September 2
 3. **P01, value of a QALY.** The source cites the Green Book (2022), Annex 1, para A1.63, but the URL is a hosted copy whose path suggests the 2020 edition (`ohe.org/wp-content/uploads/2020/08/The_Green_Book.pdf`). Worth confirming that the paragraph and value match the edition linked.
 4. **Links that refuse automated checks.** 24 source links, from publishers including Wiley, Elsevier, JAMA, NEJM, the Health Foundation, IFS and UK Parliament, return 403 to scripts. The weekly check lists these separately rather than as broken. They have not been checked by hand in this build.
 
+## Wording found during the price-year check
+
+- **H19, children's homes.** The NAO describes £318,400 as spend *per child*, not per place ("unit cost per year" in the ledger). Its "children's homes" also covers secure units, residential care homes and residential schools.
+- **I07, parenting programmes.** Bonin et al. give £1,177 "per participant". The ledger, the calculator (unit "families") and the who-pays text say per family.
+- **P01, value of a QALY.** The hosted PDF is the 2022 edition, despite "2020/08" in its URL. The £70,000 sentence sits in a bullet under para A1.64, though the edition's own change log cites A1.63. The 2026 Green Book (5 February 2026) no longer states a QALY value; it refers readers to supplementary guidance on health.
+- **H28, domestic abuse.** The source total is £66.2bn (£66,192m), recorded as £66bn. The three-year caveat is already in the note.
+
 ## Headlines that are sums
 
 5. **H29, crime.** The map headline is "£78bn", the sum of £61bn (individuals) and £17bn (businesses). The sum does not appear in the value text. It is a within-entry sum, so it does not break the "never sum harm costs" rule, but it presents an Oxon Advisory addition as if it were the source's figure.
@@ -24,7 +31,9 @@ Things noticed in `src/data/ledger.json` while building the site, 25 September 2
 
 ## Price years
 
-12. **Publication year or price year.** Checked against the sources on 25 September 2026. H01 (2016/17 prices) and H12 (2023/24 prices) were corrected in `ledger.json` with Stan's approval. H25 and H26 are in 2023 prices, as recorded; H25's costs are for 2021, expressed in 2023 prices. H07 says "2019 GBP" without saying whether that is a calendar or financial year. H21 gives a cost year (2022) and does not state a price base for its total. H18 mixes price bases (cost year 2023/24, "current prices"). H22's factsheet gives no price year; the methodology it links uses 2021/22 prices. H18 and H22 are left out of rebasing; I35 was not checked, because it is no longer rebased.
+12. **Publication year or price year.** Checked against the sources on 25 September 2026. H01 (2016/17 prices) and H12 (2023/24 prices) were corrected in `ledger.json` with Stan's approval. H25 and H26 are in 2023 prices, as recorded; H25's costs are for 2021, expressed in 2023 prices. H07 says "2019 GBP" without saying whether that is a calendar or financial year. H21 gives a cost year (2022) and does not state a price base for its total. H18 mixes price bases (cost year 2023/24, "current prices"). H22's factsheet gives no price year; the methodology it links uses 2021/22 prices. H18 and H22 are left out of rebasing.
+
+   A second check covered every remaining rebased entry. I05 said 2012/13, but the source says "2013 GBP"; it was corrected with Stan's approval. H23, H35 and H36 state no price base (H36's unit costs are in 2015/16 prices, with no uprating described). H28's total is headed 2016/17, but some components are in 2017 prices. These four are left out of rebasing, and their year fields are unchanged.
 13. **H03.** The year field reads "2014 report", which is a publication date, not a price year. It is left out of rebasing.
 14. **F07.** The year field holds two years ("2022; 2025"), for the forecast and the outturn. This is correct for the entry, but the field has no single price year.
 

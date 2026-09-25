@@ -25,7 +25,7 @@
       "amount": 14700000000.0,
       "price_year": "2024/25",
       "basis": "financial",
-      "note": ""
+      "note": "Source: real-terms figures, \"baseline 2024/25\"."
     },
     {
       "id": "H04",
@@ -33,7 +33,7 @@
       "amount": 222,
       "price_year": "2015",
       "basis": "calendar",
-      "note": "Headline figure (by age 5). The age 1 figure (£91) not rebased."
+      "note": "Source: \"£ sterling, 2015 prices\". Headline figure (by age 5). The age 1 figure (£91) not rebased."
     },
     {
       "id": "H06",
@@ -41,7 +41,7 @@
       "amount": 2946000000.0,
       "price_year": "2006",
       "basis": "calendar",
-      "note": "Per-child figures not rebased."
+      "note": "Source: \"reported in UK pounds at 2006 prices\". Per-child figures not rebased."
     },
     {
       "id": "H07",
@@ -57,7 +57,7 @@
       "amount": 70019,
       "price_year": "1998",
       "basis": "calendar",
-      "note": "Figure for people with conduct disorder. Comparison figure (£7,423) not rebased; the ratio between them is unaffected."
+      "note": "Source: \"Costs in 1998 prices\". Figure for people with conduct disorder; comparison figure (£7,423) not rebased."
     },
     {
       "id": "H12",
@@ -73,7 +73,7 @@
       "amount": 318400,
       "price_year": "2023/24",
       "basis": "financial",
-      "note": "Children's home place. Foster care and LA total not rebased."
+      "note": "Source: \"All figures are in 2023-24 prices\". Foster care and LA total not rebased."
     },
     {
       "id": "H21",
@@ -82,14 +82,6 @@
       "price_year": "2022",
       "basis": "calendar",
       "note": "Source gives the cost year (2022) and prices some components in 2022 prices; read as calendar 2022. Split by payer not rebased."
-    },
-    {
-      "id": "H23",
-      "figure": "£19bn",
-      "amount": 19000000000.0,
-      "price_year": "2020/21",
-      "basis": "financial",
-      "note": "Lower bound (\"over\"). Components not rebased."
     },
     {
       "id": "H25",
@@ -113,15 +105,7 @@
       "amount": 2840000000.0,
       "price_year": "2024/25",
       "basis": "financial",
-      "note": "Gross figure. Net figure not rebased."
-    },
-    {
-      "id": "H28",
-      "figure": "£66bn",
-      "amount": 66000000000.0,
-      "price_year": "2016/17",
-      "basis": "financial",
-      "note": "The source's own 2024-price figure (≈£85bn) is left as reported."
+      "note": "2024/25 outturn spend. Gross figure; net figure not rebased."
     },
     {
       "id": "H29",
@@ -129,7 +113,7 @@
       "amount": 61000000000.0,
       "price_year": "2019/20",
       "basis": "financial",
-      "note": "The map headline (£78bn) adds this to the business figure and does not appear in the source text, so the individual figure is used. Business figure (£17bn) not rebased."
+      "note": "Source: \"presented in 2019 to 2020 prices\". The map headline (£78bn) adds this to the business figure; that sum is not in the source text. Business figure (£17bn) not rebased."
     },
     {
       "id": "H31",
@@ -137,31 +121,15 @@
       "amount": 59026,
       "price_year": "2024/25",
       "basis": "financial",
-      "note": "Overall resource cost. Direct cost not rebased."
-    },
-    {
-      "id": "H35",
-      "figure": "£11.2bn",
-      "amount": 11200000000.0,
-      "price_year": "2023/24",
-      "basis": "financial",
-      "note": "Lower bound (\"at least\")."
-    },
-    {
-      "id": "H36",
-      "figure": "£1.3bn",
-      "amount": 1300000000.0,
-      "price_year": "2018/19",
-      "basis": "financial",
-      "note": "Approximate in the source (\"about\")."
+      "note": "2024/25 outturn cost. Overall resource cost; direct cost not rebased."
     },
     {
       "id": "I05",
       "figure": "£1,812",
       "amount": 1812,
-      "price_year": "2012/13",
-      "basis": "financial",
-      "note": "Incremental cost per participant."
+      "price_year": "2013",
+      "basis": "calendar",
+      "note": "Source: \"expressed in UK pounds sterling (2013 GBP)\" (Corbacho et al., accepted manuscript). Incremental cost per participant."
     },
     {
       "id": "I07",
@@ -169,7 +137,7 @@
       "amount": 1177,
       "price_year": "2008/09",
       "basis": "financial",
-      "note": "Cost per family. The calculator keeps the source figure; this column is for reference only."
+      "note": "Source: \"2008/09 prices\". The calculator keeps the source figure; this is for reference only."
     },
     {
       "id": "I09",
@@ -177,7 +145,7 @@
       "amount": 4489,
       "price_year": "2006/07",
       "basis": "financial",
-      "note": "Incremental cost per child."
+      "note": "Source: unit costs \"for the financial year 2006–2007\". Incremental cost per child."
     },
     {
       "id": "P01",
@@ -185,7 +153,7 @@
       "amount": 70000,
       "price_year": "2020/21",
       "basis": "financial",
-      "note": "Green Book value; the Green Book itself expects this to be uprated for later price bases."
+      "note": "Source: \"£70,000 in 20/21 prices\" (Green Book 2022, p.87)."
     },
     {
       "id": "P02",
@@ -193,7 +161,7 @@
       "amount": 13000,
       "price_year": "2019",
       "basis": "calendar",
-      "note": "Central value. Range not rebased."
+      "note": "Source: \"in 2019 prices and values\". Central value; range not rebased."
     },
     {
       "id": "F08",
@@ -201,7 +169,7 @@
       "amount": 40000000000.0,
       "price_year": "2023",
       "basis": "calendar",
-      "note": "Value states \"in 2023 prices\"; lower bound (\"more than\")."
+      "note": "Source: table \"(in 2023 prices)\"; lower bound (\"more than\")."
     }
   ],
   "excluded": [
@@ -290,8 +258,16 @@
       "reason": "not rebased: price year not stated in the source (the linked methodology uses 2021/22)"
     },
     {
+      "id": "H23",
+      "reason": "not rebased: price year not stated in the source"
+    },
+    {
       "id": "H24",
       "reason": "not rebased: price year 2026 is later than the latest deflator outturn (2025/26)"
+    },
+    {
+      "id": "H28",
+      "reason": "not rebased: price base mixed in the source (total headed 2016/17; some components in 2017 prices)"
     },
     {
       "id": "H30",
@@ -308,6 +284,14 @@
     {
       "id": "H34",
       "reason": "not rebased: no £ amount (percentages)"
+    },
+    {
+      "id": "H35",
+      "reason": "not rebased: price year not stated in the source"
+    },
+    {
+      "id": "H36",
+      "reason": "not rebased: price year not stated in the source (its unit costs are in 2015/16 prices)"
     },
     {
       "id": "I01",
@@ -457,5 +441,6 @@
       "id": "P07",
       "reason": "not rebased: share of spend"
     }
-  ]
+  ],
+  "checked": "Every price year was checked against its source on 25 September 2026."
 }
