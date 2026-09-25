@@ -1,0 +1,44 @@
+name: Weekly source link check
+
+# Requests every source URL in the ledger and opens (or updates) one issue listing any
+# that are broken. Read-only on the data: it never edits ledger.json.
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Check source URLs
+        id: check
+        continue-on-error: true
+        run: npm run sources
+
+      - name: Open or update the broken-links issue
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Broken source links in the ledger"
+          gh label create source-links --color B60205 --description "Weekly source link check" 2>/dev/null || true
+          N=$(gh issue list --state open --label source-links --json number --jq '.[0].number')
+          if [ -n "$N" ]; then
+            gh issue comment "$N" --body-file source-links-report.md
+          else
+            gh issue create --title "$TITLE" --label source-links --body-file source-links-report.md
+          fi

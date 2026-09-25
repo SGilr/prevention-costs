@@ -1,0 +1,51 @@
+name: Checks
+
+# Schema validation, type check, build, internal links and accessibility.
+# Runs on every push to a branch other than main. Pull requests and main run these same
+# checks through deploy.yml, which calls this workflow before anything is deployed.
+on:
+  push:
+    branches-ignore: [main]
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Validate ledger.json and rebase.json against the schema
+        run: npm run validate
+
+      - name: Type check
+        run: npx astro check
+
+      - name: Build
+        run: npm run build
+
+      - name: Internal link check
+        run: npm run links
+
+      - name: Accessibility (pa11y-ci, axe and HTML_CodeSniffer, WCAG 2 AA)
+        run: |
+          npx astro preview --port 4331 --host 127.0.0.1 &
+          npx --yes wait-on --timeout 60000 http-get://127.0.0.1:4331/
+          npm run a11y
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7

@@ -1,0 +1,50 @@
+name: Deploy to Cloudflare Pages
+
+# main deploys to production. Pull requests get a preview deployment on
+# <branch>.prevention-costs.pages.dev. Nothing deploys unless the checks pass first.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+
+  deploy:
+    needs: checks
+    # Secrets are not available to pull requests from forks, so previews only run for
+    # branches in this repository.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Deploy
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=prevention-costs --branch=${{ github.head_ref || github.ref_name }}
+
+      - name: Post the preview address on the pull request
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body "Preview deployed: $URL"

@@ -13,7 +13,8 @@
     "check": "astro check",
     "og": "tsx scripts/og.ts",
     "links": "tsx scripts/check-links.ts",
-    "a11y": "pa11y-ci --config .pa11yci.json"
+    "a11y": "pa11y-ci --config .pa11yci.json",
+    "sources": "tsx scripts/check-sources.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

@@ -8,3 +8,4 @@ dist/
 .env.*
 seed/
 public/og/
+source-links-report.md
