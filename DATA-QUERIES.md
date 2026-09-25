@@ -31,4 +31,4 @@ Things noticed in `src/data/ledger.json` while building the site, 25 September 2
 ## Other
 
 15. **Blank beneficiaries.** I05, I09, I18 and I19 have an empty `beneficiary`. The prototype displays these as "No benefit shown in trial". That fits the three null UK trials (I05, I18, I19), but I09 (PACT) has the result "Uncertain", and the label may overstate what its trial showed.
-16. **Workbook.** `prevention-returns-ledger.xlsx` was not among the seed files moved from Downloads. The downloads page says the workbook "will be added here shortly" until it is placed at `public/downloads/prevention-returns-ledger.xlsx`. Once supplied, it should be checked against `ledger.json` so the two do not disagree.
+16. **Workbook.** Added on 25 September 2026. All 87 rows match `ledger.json` field for field, and its Scenarios sheet gives the same results as the site calculator. It is a separate file, so a future edit to `ledger.json` needs a matching edit to the workbook.
