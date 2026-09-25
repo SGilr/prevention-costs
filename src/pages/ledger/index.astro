@@ -20,7 +20,7 @@ const filters = [
     <p class="lede">Harm costs, interventions, valuation parameters and forecasts in one list. Figures come from different years, prices, perspectives and jurisdictions, so compare within a row rather than adding across rows.</p>
   </div>
   <section aria-label="Filters and entries">
-    <form class="filters" role="search" id="filters" action="/ledger/" method="get">
+    <div class="filters" role="search" id="filters" aria-label="Filter the ledger">
       <label for="f-q">Search<input id="f-q" name="q" type="search" placeholder="e.g. brain injury, QALY" autocomplete="off"></label>
       {filters.map((f) => (
         <label for={`f-${f.id}`}>{f.label}
@@ -30,8 +30,7 @@ const filters = [
           </select>
         </label>
       ))}
-      <noscript><button type="submit">Apply filters</button></noscript>
-    </form>
+    </div>
     <div class="filterbar">
       <span id="shown" class="num" role="status" aria-live="polite">Showing {ROWS.length} of {ROWS.length} entries</span>
       <span class="acts"><button class="link" id="copylink" type="button" hidden>Copy link to this view</button><button class="link" id="reset" type="button">Clear filters</button></span>

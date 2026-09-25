@@ -1,7 +1,7 @@
 // Ledger filters. State lives in the URL query (?q=&kind=&stage=&domain=&result=&grade=&hs=)
 // so a filtered view can be shared. Rows are rendered at build time; this only hides them.
 const KEYS = ['kind', 'stage', 'domain', 'result', 'grade', 'hs'] as const;
-const form = document.getElementById('filters') as HTMLFormElement;
+const form = document.getElementById('filters')!;
 const q = document.getElementById('f-q') as HTMLInputElement;
 const rows = [...document.querySelectorAll<HTMLDetailsElement>('details.row')];
 const shown = document.getElementById('shown')!;
@@ -42,9 +42,9 @@ function render() {
 }
 
 form.addEventListener('input', () => { writeUrl(); render(); });
-form.addEventListener('submit', (e) => e.preventDefault());
+const clear = () => { q.value = ''; for (const k of KEYS) sel(k).value = ''; };
 document.getElementById('reset')!.addEventListener('click', () => {
-  form.reset();
+  clear();
   writeUrl();
   render();
 });
@@ -64,7 +64,7 @@ render();
 // Open a row named in the hash, for example /ledger/#row-I32.
 const target = location.hash.startsWith('#row-') ? (document.getElementById(location.hash.slice(1)) as HTMLDetailsElement | null) : null;
 if (target) {
-  if (target.hidden) { form.reset(); writeUrl(); render(); }
+  if (target.hidden) { clear(); writeUrl(); render(); }
   target.open = true;
   target.scrollIntoView({ block: 'start' });
   target.classList.add('flash');

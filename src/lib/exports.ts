@@ -74,10 +74,9 @@ license: CC-BY-4.0
 authors:
   - family-names: Gilmour
     given-names: Stan
-publisher:
-  name: "${SITE.publisher}"
 contact:
-  - email: ${SITE.contact}
+  - name: "${SITE.publisher}"
+    email: ${SITE.contact}
 keywords:
   - prevention
   - early intervention

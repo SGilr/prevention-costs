@@ -2,7 +2,7 @@
    (seed/prevention-returns-ledger.html, 25 September 2026). */
 :root{
   --paper:#F3F4F7; --surface:#FFFFFF; --ink:#18203A; --muted:#58617A; --rule:#D8DCE4; --soft:#E9ECF2;
-  --navy:#1D2B4F; --ochre:#9A6E1C; --ochre-bg:#F4EAD6; --focus:#2A5BD7;
+  --navy:#1D2B4F; --ochre:#9A6E1C; --ochre-ink:#7A5610; --ochre-bg:#F4EAD6; --focus:#2A5BD7;
   --r-return:#2C7A52; --r-ce:#236B86; --r-eff:#5E5596; --r-unc:#6F7689; --r-null:#A13D2D;
   --win:#DDE3EE; --win-ink:#28365C;
   --serif:"EB Garamond", Garamond, "Times New Roman", serif;
@@ -12,7 +12,7 @@
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --paper:#0E1424; --surface:#151D31; --ink:#E6E9F1; --muted:#9BA4B8; --rule:#2A344D; --soft:#1C2640;
-    --navy:#AFC0E6; --ochre:#DDAE55; --ochre-bg:#2E2718; --focus:#8FB0FF;
+    --navy:#AFC0E6; --ochre:#DDAE55; --ochre-ink:#DDAE55; --ochre-bg:#2E2718; --focus:#8FB0FF;
     --r-return:#5DBB8A; --r-ce:#5AAAC9; --r-eff:#A69BDB; --r-unc:#9AA1B3; --r-null:#E5806C;
     --win:#1F2A45; --win-ink:#C4D0EC;
   }
@@ -20,7 +20,7 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --paper:#0E1424; --surface:#151D31; --ink:#E6E9F1; --muted:#9BA4B8; --rule:#2A344D; --soft:#1C2640;
-  --navy:#AFC0E6; --ochre:#DDAE55; --ochre-bg:#2E2718; --focus:#8FB0FF;
+  --navy:#AFC0E6; --ochre:#DDAE55; --ochre-ink:#DDAE55; --ochre-bg:#2E2718; --focus:#8FB0FF;
   --r-return:#5DBB8A; --r-ce:#5AAAC9; --r-eff:#A69BDB; --r-unc:#9AA1B3; --r-null:#E5806C;
   --win:#1F2A45; --win-ink:#C4D0EC;
 }
@@ -99,7 +99,9 @@ section{padding-top:44px;display:grid;gap:16px}
 .stagehead:nth-child(7){border-right:0}
 .stagehead h2{display:block;font-size:1.05rem;line-height:1.1}
 .stagehead span{font-size:.8rem;color:var(--muted)}
-.lifecol{background:repeating-linear-gradient(135deg,transparent 0 10px,var(--soft) 10px 11px)}
+/* The prototype hatched this column; a flat tint and dashed rule keep text contrast measurable. */
+.lifecol{background:color-mix(in srgb,var(--soft) 45%,var(--surface));border-left:1px dashed var(--muted)}
+.stagehead.lifecol{background:var(--soft)}
 .winrow{padding:3px 6px;display:flex;align-items:center}
 .win{background:var(--win);color:var(--win-ink);border-radius:4px;padding:4px 9px;font-size:.78rem;line-height:1.25;width:100%}
 .win i{font-style:normal;opacity:.8}
@@ -151,7 +153,7 @@ details.row summary::-webkit-details-marker{display:none}
 dl.fields{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:8px 0 0}
 dl.fields dt{color:var(--muted);font-size:.8rem;padding-top:1px}
 dl.fields dd{margin:0}
-.flow .arrow{color:var(--ochre);font-weight:700}
+.flow .arrow{color:var(--ochre-ink);vertical-align:middle;margin-inline:2px}
 .empty{padding:20px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--rule);border-radius:7px}
 
 /* panels */
