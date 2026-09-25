@@ -24,11 +24,11 @@ Things noticed in `src/data/ledger.json` while building the site, 25 September 2
 
 ## Price years
 
-12. **Publication year or price year.** Several `year` values may be publication years rather than price years: H01 (2016), H12 (2024), H18 (2025), H22 (2024), H25 (2023), H26 (2023) and I35 (2025). For example, EIF's 2016 analysis may report costs at an earlier price base. `rebase.json` reads each `year` as the price year, so each of these should be confirmed against the source before sign-off.
+12. **Publication year or price year.** Checked against the sources on 25 September 2026. H01 (2016/17 prices) and H12 (2023/24 prices) were corrected in `ledger.json` with Stan's approval. H25 and H26 are in 2023 prices, as recorded; H25's costs are for 2021, expressed in 2023 prices. H07 says "2019 GBP" without saying whether that is a calendar or financial year. H21 gives a cost year (2022) and does not state a price base for its total. H18 mixes price bases (cost year 2023/24, "current prices"). H22's factsheet gives no price year; the methodology it links uses 2021/22 prices. H18 and H22 are left out of rebasing; I35 was not checked, because it is no longer rebased.
 13. **H03.** The year field reads "2014 report", which is a publication date, not a price year. It is left out of rebasing.
 14. **F07.** The year field holds two years ("2022; 2025"), for the forecast and the outturn. This is correct for the entry, but the field has no single price year.
 
 ## Other
 
 15. **Blank beneficiaries.** I05, I09, I18 and I19 have an empty `beneficiary`. The prototype displays these as "No benefit shown in trial". That fits the three null UK trials (I05, I18, I19), but I09 (PACT) has the result "Uncertain", and the label may overstate what its trial showed.
-16. **Workbook.** Added on 25 September 2026. All 87 rows match `ledger.json` field for field, and its Scenarios sheet gives the same results as the site calculator. It is a separate file, so a future edit to `ledger.json` needs a matching edit to the workbook.
+16. **Workbook.** Added on 25 September 2026. All 87 rows match `ledger.json` field for field, and its Scenarios sheet gives the same results as the site calculator. It is a separate file, so a future edit to `ledger.json` needs a matching edit to the workbook. **It is now out of step on two cells:** the price year for H01 (`2016/17`) and H12 (`2023/24`).

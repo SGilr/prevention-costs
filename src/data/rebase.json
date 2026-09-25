@@ -9,15 +9,15 @@
     "financial": "amount × 100 ÷ financial-year index for the price year (2025/26 = 100).",
     "calendar": "amount × 100 ÷ (0.25 × index for the financial year ending in March of that calendar year + 0.75 × index for the financial year starting in April), because nine months of a calendar year fall in the later financial year."
   },
-  "rules": "One £ figure per entry, quoted exactly from the value field. Ratios, percentages, counts, DALYs and US$ figures are not rebased. Entries with no stated price year, an approximate year, a range of years, or a year later than the latest deflator outturn are left out.",
+  "rules": "One £ figure per entry, quoted exactly from the value field. Ratios, percentages, counts, DALYs and US$ figures are not rebased. Entries with no stated price year, an approximate year, a range of years, or a year later than the latest deflator outturn are left out. Cost-effectiveness ratios (cost per QALY or per healthy year) are not rebased.",
   "entries": [
     {
       "id": "H01",
       "figure": "£16.6bn",
       "amount": 16600000000.000002,
-      "price_year": "2016",
-      "basis": "calendar",
-      "note": "Principal figure. Per-person and per-system components not rebased."
+      "price_year": "2016/17",
+      "basis": "financial",
+      "note": "Source: \"Total annual spend: £16.6bn (2016‐17 prices)\" (EIF 2016, p.13). Per-person and per-system components not rebased."
     },
     {
       "id": "H02",
@@ -49,7 +49,7 @@
       "amount": 27800000000.0,
       "price_year": "2019",
       "basis": "calendar",
-      "note": "Headline cohort figure. Per-child figure (£71,309) not rebased."
+      "note": "Source gives \"2019 GBP\" without saying calendar or financial year; read as calendar 2019. Per-child figure (£71,309) not rebased."
     },
     {
       "id": "H10",
@@ -60,28 +60,12 @@
       "note": "Figure for people with conduct disorder. Comparison figure (£7,423) not rebased; the ratio between them is unaffected."
     },
     {
-      "id": "H11",
-      "figure": "£717",
-      "amount": 717,
-      "price_year": "2008",
-      "basis": "calendar",
-      "note": "CHECK: two unrelated figures (men £271 a year; women £717 over 8 years). Headline figure chosen."
-    },
-    {
       "id": "H12",
       "figure": "£170,000",
       "amount": 170000,
-      "price_year": "2024",
-      "basis": "calendar",
-      "note": "Lower bound (\"at least\"). Cohort figure not rebased."
-    },
-    {
-      "id": "H18",
-      "figure": "£43bn",
-      "amount": 43000000000.0,
-      "price_year": "2025",
-      "basis": "calendar",
-      "note": "Components not rebased."
+      "price_year": "2023/24",
+      "basis": "financial",
+      "note": "Source: \"a 'present value' in 2023/24 prices\" (IPPR 2024, footnote 23). Lower bound (\"at least\"). Cohort figure not rebased."
     },
     {
       "id": "H19",
@@ -97,15 +81,7 @@
       "amount": 300000000000.0,
       "price_year": "2022",
       "basis": "calendar",
-      "note": "Split by payer not rebased."
-    },
-    {
-      "id": "H22",
-      "figure": "£27.44bn",
-      "amount": 27440000000.0,
-      "price_year": "2024",
-      "basis": "calendar",
-      "note": "CHECK: \"2024\" read as calendar year. Components not rebased."
+      "note": "Source gives the cost year (2022) and prices some components in 2022 prices; read as calendar 2022. Split by payer not rebased."
     },
     {
       "id": "H23",
@@ -121,7 +97,7 @@
       "amount": 98000000000.0,
       "price_year": "2023",
       "basis": "calendar",
-      "note": "Sub-totals not rebased."
+      "note": "Source: \"2021 costs expressed in 2023 prices\". Sub-totals not rebased."
     },
     {
       "id": "H26",
@@ -153,7 +129,7 @@
       "amount": 61000000000.0,
       "price_year": "2019/20",
       "basis": "financial",
-      "note": "CHECK: headline £78bn is the sum of two figures and does not appear in the value text, so the individual figure is used. Business figure (£17bn) not rebased."
+      "note": "The map headline (£78bn) adds this to the business figure and does not appear in the source text, so the individual figure is used. Business figure (£17bn) not rebased."
     },
     {
       "id": "H31",
@@ -180,22 +156,6 @@
       "note": "Approximate in the source (\"about\")."
     },
     {
-      "id": "I02",
-      "figure": "£19,601",
-      "amount": 19601,
-      "price_year": "2018/19",
-      "basis": "financial",
-      "note": "CHECK: cost per QALY. Rebasing moves it against the NICE range, which is set in current prices."
-    },
-    {
-      "id": "I04",
-      "figure": "£150,000",
-      "amount": 150000,
-      "price_year": "2020",
-      "basis": "calendar",
-      "note": "CHECK: short-term cost per QALY. Lifetime saving (£37) not rebased."
-    },
-    {
       "id": "I05",
       "figure": "£1,812",
       "amount": 1812,
@@ -218,14 +178,6 @@
       "price_year": "2006/07",
       "basis": "financial",
       "note": "Incremental cost per child."
-    },
-    {
-      "id": "I35",
-      "figure": "£3,800",
-      "amount": 3800,
-      "price_year": "2025",
-      "basis": "calendar",
-      "note": "CHECK: cost per year of good health. NHS comparison (£13,500) not rebased."
     },
     {
       "id": "P01",
@@ -302,6 +254,10 @@
       "reason": "not rebased: no £ amount (prevalence)"
     },
     {
+      "id": "H11",
+      "reason": "not rebased: two unrelated figures with no single principal amount"
+    },
+    {
       "id": "H13",
       "reason": "not rebased: price year not stated"
     },
@@ -322,8 +278,16 @@
       "reason": "not rebased: no £ amount (prevalence)"
     },
     {
+      "id": "H18",
+      "reason": "not rebased: price base mixed in the source (cost year 2023/24, \"current prices\", some parts in 2024/25 prices)"
+    },
+    {
       "id": "H20",
       "reason": "not rebased: price year 2026 is later than the latest deflator outturn (2025/26)"
+    },
+    {
+      "id": "H22",
+      "reason": "not rebased: price year not stated in the source (the linked methodology uses 2021/22)"
     },
     {
       "id": "H24",
@@ -350,8 +314,16 @@
       "reason": "not rebased: price year not stated"
     },
     {
+      "id": "I02",
+      "reason": "not rebased: cost-effectiveness ratio, judged against the threshold of its day"
+    },
+    {
       "id": "I03",
       "reason": "not rebased: price year not stated"
+    },
+    {
+      "id": "I04",
+      "reason": "not rebased: cost-effectiveness ratio, judged against the threshold of its day"
     },
     {
       "id": "I06",
@@ -460,6 +432,10 @@
     {
       "id": "I34",
       "reason": "not rebased: ratio (median return per £1)"
+    },
+    {
+      "id": "I35",
+      "reason": "not rebased: cost-effectiveness ratio, judged against the threshold of its day"
     },
     {
       "id": "P03",
