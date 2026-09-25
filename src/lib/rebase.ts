@@ -10,6 +10,13 @@ const rebase = rebaseSchema.parse(rebaseRaw);
 export const REBASE_ACTIVE = rebase.status === 'signed-off';
 export const REBASE_LABEL = rebase.label;
 export const REBASE_METHOD = rebase.method;
+export const REBASE_SIGNED_BY = rebase.signed_off_by ?? '';
+export const REBASE_SIGNED_ON = rebase.signed_off_on
+  ? new Date(rebase.signed_off_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+  : '';
+export const rebaseCount = rebase.entries.length;
+/** Round to three significant figures, the precision shown on the site and in downloads. */
+export const sig3 = (n: number) => Number(n.toPrecision(3));
 
 const fy = new Map<string, number>();
 for (const line of deflatorsCsv.trim().split('\n').slice(1)) {
@@ -51,7 +58,7 @@ export function rebasedFor(r: Row): { rebased?: Rebased; reason?: string } {
 
 /** Format a rebased £ amount to three significant figures, in the ledger's own style. */
 export function fmtRebased(n: number): string {
-  const sig = (x: number) => Number(x.toPrecision(3));
+  const sig = sig3;
   if (n >= 1e9) return `£${sig(n / 1e9).toLocaleString('en-GB')}bn`;
   if (n >= 1e6) return `£${sig(n / 1e6).toLocaleString('en-GB')}m`;
   return `£${sig(n).toLocaleString('en-GB')}`;

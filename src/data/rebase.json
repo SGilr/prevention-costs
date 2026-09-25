@@ -1,7 +1,7 @@
 {
-  "status": "draft",
-  "signed_off_by": null,
-  "signed_off_on": null,
+  "status": "signed-off",
+  "signed_off_by": "Stan Gilmour KPM FRSA",
+  "signed_off_on": "2026-09-25",
   "label": "Oxon Advisory calculation, 2025/26 prices, HM Treasury GDP deflator",
   "target_price_year": "2025/26",
   "deflators": "src/data/deflators.csv (HM Treasury, June 2026 Quarterly National Accounts)",

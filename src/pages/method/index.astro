@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { LEDGER } from '../../lib/ledger';
-import { REBASE_ACTIVE, REBASE_LABEL } from '../../lib/rebase';
+import { REBASE_ACTIVE, REBASE_LABEL, REBASE_SIGNED_BY, REBASE_SIGNED_ON, rebaseCount } from '../../lib/rebase';
 import { SITE, REVIEW } from '../../site-config';
 import meta from '../../data/deflators.meta.json';
 ---
@@ -46,7 +46,8 @@ import meta from '../../data/deflators.meta.json';
     <div class="sechead">
       <h2 id="h-prices">Price years and rebasing</h2>
       {REBASE_ACTIVE ? (
-        <p>Where an entry has a single £ figure and a stated financial or calendar year, the entry page also shows it in 2025/26 prices using the {meta.publisher} series "{meta.title}", downloaded {meta.downloaded}. Financial-year figures are divided by that year's index (2025/26 = 100). For a calendar year, the index is weighted a quarter to the financial year ending that March and three quarters to the one starting in April. Ratios, percentages, counts, DALYs and US$ figures are not rebased, and nor are figures whose price year is not stated, approximate or a range.</p>
+        <p>For {rebaseCount} entries, the entry page also shows the principal £ figure in 2025/26 prices, using the {meta.publisher} series "{meta.title}", downloaded on {SITE.sourcesChecked}. The figure is labelled "{REBASE_LABEL}" and sits beside the source's own figure, which is never replaced. Financial-year figures are divided by that year's index (2025/26 = 100). For a calendar year, the index is weighted a quarter to the financial year ending that March and three quarters to the one starting in April. Results are shown to three significant figures.</p>
+        <p>The price year of each rebased figure was checked against its source. Figures are left out where the source states no price year, mixes price bases, or gives an approximate year or a range of years. Ratios, cost-effectiveness ratios, percentages, counts, DALYs and US$ figures are also left out. Each entry page gives the reason. The method was signed off by {REBASE_SIGNED_BY} on {REBASE_SIGNED_ON}.</p>
       ) : (
         <p>Each figure is shown in the price year its source reports. A second column in 2025/26 prices, calculated with the HM Treasury GDP deflator series, is in preparation and will be clearly labelled as an Oxon Advisory calculation.</p>
       )}

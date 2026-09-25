@@ -1,9 +1,16 @@
 {
   "defaults": {
     "standard": "WCAG2AA",
-    "runners": ["axe", "htmlcs"],
+    "runners": [
+      "axe",
+      "htmlcs"
+    ],
     "timeout": 60000,
-    "chromeLaunchConfig": { "args": ["--no-sandbox"] }
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox"
+      ]
+    }
   },
   "urls": [
     "http://127.0.0.1:4331/",
@@ -16,6 +23,7 @@
     "http://127.0.0.1:4331/method/",
     "http://127.0.0.1:4331/downloads/",
     "http://127.0.0.1:4331/about/",
+    "http://127.0.0.1:4331/entry/h01/",
     "http://127.0.0.1:4331/entry/i32/",
     "http://127.0.0.1:4331/entry/h15/",
     "http://127.0.0.1:4331/entry/p01/",

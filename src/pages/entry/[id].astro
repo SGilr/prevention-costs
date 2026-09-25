@@ -49,7 +49,7 @@ const desc = `${r.item}: ${r.measure.toLowerCase()}. ${r.value}. Grade ${r.grade
             <span class="muted">Rebased from {rebased.figure} in {rebased.priceYear} prices. {rebased.note}</span>
           </div>
         )}
-        {reason && <p class="muted">2025/26 prices: {reason}.</p>}
+        {reason && <p class="muted">Not rebased to 2025/26 prices: {reason.replace(/^not rebased: /, '')}.</p>}
       </section>
 
       <section aria-labelledby="h-detail">

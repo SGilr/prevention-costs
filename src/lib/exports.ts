@@ -1,7 +1,7 @@
 // Download builders. The rows are exported exactly as they appear in ledger.json. Rebased
 // figures, when signed off, are added as separate, labelled fields and never replace a source value.
 import { LEDGER, ROWS } from './ledger';
-import { rebasedFor, REBASE_ACTIVE, REBASE_LABEL } from './rebase';
+import { rebasedFor, REBASE_ACTIVE, REBASE_LABEL, fmtRebased, sig3 } from './rebase';
 import { SITE } from '../site-config';
 
 export function ledgerJson() {
@@ -25,10 +25,11 @@ export function ledgerJson() {
   if (REBASE_ACTIVE) {
     out.oxon_advisory_rebased_2025_26 = {
       label: REBASE_LABEL,
+      precision: 'Three significant figures',
       entries: Object.fromEntries(
         ROWS.map((r) => {
           const { rebased, reason } = rebasedFor(r);
-          return [r.id, rebased ? { from_figure: rebased.figure, from_price_year: rebased.priceYear, basis: rebased.basis, gbp_2025_26: Math.round(rebased.rebased) } : { not_rebased: reason }];
+          return [r.id, rebased ? { from_figure: rebased.figure, from_price_year: rebased.priceYear, basis: rebased.basis, gbp_2025_26: sig3(rebased.rebased), display: fmtRebased(rebased.rebased) } : { not_rebased: reason }];
         }),
       ),
     };
@@ -44,7 +45,7 @@ const cell = (v: unknown) => {
 };
 
 export function ledgerCsv() {
-  const head = [...COLS, ...CALC.map((c) => `calc_${c}`), 'rebased_2025_26_gbp', 'rebased_from_figure', 'rebased_from_price_year', 'rebased_note'];
+  const head = [...COLS, ...CALC.map((c) => `calc_${c}`), 'rebased_2025_26_gbp', 'rebased_2025_26_display', 'rebased_from_figure', 'rebased_from_price_year', 'rebased_note'];
   const lines = [head.join(',')];
   for (const r of ROWS) {
     const { rebased, reason } = rebasedFor(r);
@@ -52,7 +53,8 @@ export function ledgerCsv() {
     lines.push([
       ...COLS.map((c) => cell(r[c])),
       ...CALC.map((c) => cell(calc[c])),
-      cell(rebased ? Math.round(rebased.rebased) : ''),
+      cell(rebased ? sig3(rebased.rebased) : ''),
+      cell(rebased ? fmtRebased(rebased.rebased) : ''),
       cell(rebased?.figure),
       cell(rebased?.priceYear),
       cell(rebased ? REBASE_LABEL : reason ?? ''),
