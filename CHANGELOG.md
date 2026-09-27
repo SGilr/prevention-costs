@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- Data corrections after checking six primary sources, approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
+  - H18: the £1.9bn in benefits is marked as outside the £43bn total, as the report states (p.9). Price year `2025` → `2023/24`. The note now gives the model's coverage (traumatic brain injury, stroke and brain tumour), the two descriptions of the total, and the page for the £91.5bn wellbeing cost, which no longer relies on a secondary summary.
+  - H22: price year `2024` → `not stated`. The note now gives the 2021/22 data year.
+  - H23: place `UK` → `England`; price year `2020/21` → `not stated`. The note now gives the 2017/18 cost year and the unpublished Public Health England analysis behind the figure.
+  - H28: "(≈£85bn in 2024 prices)" removed from the value. It is not in the Home Office report or the OSR correspondence.
+  - H35: note added on the three parts of the £11.2bn. It is tax revenue only and excludes benefit spending.
+  - H36: source changed from the Economics Observatory (2025) to the Youth Violence Commission (2020) final report, with its Warwick repository link. Price year `2018/19` → `2015/16`, the price base of every cost table in the report. The value now includes the £700m minimum. The entry is not yet rebased.
+  - The same cells updated in the workbook.
+
 ## v1.0.0 (25 September 2026)
 
 - First release of the site, generated from the ledger approved on 25 September 2026.
