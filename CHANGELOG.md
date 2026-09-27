@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.2.2 (27 September 2026)
 
 - Changes approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
   - I24: the source of "£15 per £1" traced to Knapp et al. (2014), Investing in recovery (Rethink Mental Illness), p.10. Value now reads "At least £15 per £1 over 10 years"; grade D → C; design, source and link (LSE Research Online) updated; the note gives the 2012/13-price savings behind it and says the ratio's calculation is not shown.
