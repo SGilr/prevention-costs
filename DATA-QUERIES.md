@@ -78,10 +78,15 @@ Three grade D entries checked against their primary sources. Page numbers are th
 | H13 | Daley et al. (2019), *European Psychiatry* 61, 41–48, report in euros from 2010 Danish register data (p.44): €20,135 more per adult with ADHD per year than a same-sex sibling (p.45); for the UK, €19,974m at 2.5% prevalence and €4,361m at 0.5% (Table 4, p.46), described as "crude estimates" (p.45). The £17bn and £17,000 are the NHS England ADHD Taskforce's conversion at an unstated rate, using the higher prevalence. "Avoidable" is the Taskforce's word. | Option A: Taskforce £ figures and headline kept; grade D → C; design, source wording and note revised. |
 | I24 | Park, McCrone and Knapp (2016): "Costs were all reported in UK pounds, standardized to 2009 prices" (p.145); £2,087 is reduced lost productivity over years 1 to 3 (Table 3, p.147). "£15 per £1" is not in Park. NHS England's 2023 guidance on the EIP access and waiting time standard repeats it (PDF pp.6, 17) without a citation that could be found. | Option A: note revised. Grade stays D; price year stays "not stated". |
 
+### Follow-up decision, 27 September 2026 (Priority 2)
+
+| Entry | Finding | Decision |
+|---|---|---|
+| H13 | "Avoidable" in the measure is the Taskforce's framing; Daley et al. measure a cost difference. | Measure kept as "Avoidable economic cost". The note explains the source. |
+
 ## Open
 
 | # | Entry | Query |
 |---|---|---|
 | 1 | H36 | Whether to rebase H36 from 2015/16 to 2025/26 prices. Held by Stan Gilmour on 27 September 2026. |
-| 2 | H13 | Whether the measure should change from "Avoidable economic cost" to "Economic cost", since "avoidable" is the Taskforce's framing and Daley et al. measure a cost difference. |
-| 3 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |
+| 2 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |

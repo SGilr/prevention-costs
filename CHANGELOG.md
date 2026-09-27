@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## v1.1.0 (27 September 2026)
+
+- Sources checked 27 September 2026: all 85 source links reach their source (63 automatically, 13 through Crossref, 9 in a browser), and nine entries were read against their primary sources. The date is updated on the site, in `CITATION.cff` and in the workbook.
+- The method page now gives the date the HM Treasury deflators were downloaded (25 September 2026), not the date sources were checked.
 
 - Data corrections after checking six primary sources, approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
   - H18: the £1.9bn in benefits is marked as outside the £43bn total, as the report states (p.9). Price year `2025` → `2023/24`. The note now gives the model's coverage (traumatic brain injury, stroke and brain tumour), the two descriptions of the total, and the page for the £91.5bn wellbeing cost, which no longer relies on a secondary summary.
