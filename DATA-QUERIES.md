@@ -74,7 +74,7 @@ Three grade D entries checked against their primary sources. Page numbers are th
 
 | Entry | Finding | Decision |
 |---|---|---|
-| I31 | Parsonage, Grant and Stubbs (2016), published 1 April 2016: "a one-off cost of IPS support of around £2,700 per client" (pp.5, 34). Savings of £5,125 over 18 months, £20,000 over five years and £32,400 over ten years are, annualised, "within the range £3,000 - £4,000 a year" (p.34). Figures are in "today's prices", not defined; the only stated price base is 2015/16, for another chapter (p.11). | Source changed to the report; grade D → C; value and note revised. Price year stays "not stated". |
+| I31 | Parsonage, Grant and Stubbs (2016), published January 2016 (announced 1 April 2016): "a one-off cost of IPS support of around £2,700 per client" (pp.6, 35). Savings of £5,125 over 18 months, £20,000 over five years and £32,400 over ten years are, annualised, "within the range £3,000 - £4,000 a year" (p.35). Figures are in "today's prices", not defined; the only stated price base is 2015/16, for another chapter (p.12). | Source changed to the report; grade D → C; value and note revised. Price year stays "not stated". |
 | H13 | Daley et al. (2019), *European Psychiatry* 61, 41–48, report in euros from 2010 Danish register data (p.44): €20,135 more per adult with ADHD per year than a same-sex sibling (p.45); for the UK, €19,974m at 2.5% prevalence and €4,361m at 0.5% (Table 4, p.46), described as "crude estimates" (p.45). The £17bn and £17,000 are the NHS England ADHD Taskforce's conversion at an unstated rate, using the higher prevalence. "Avoidable" is the Taskforce's word. | Option A: Taskforce £ figures and headline kept; grade D → C; design, source wording and note revised. |
 | I24 | Park, McCrone and Knapp (2016): "Costs were all reported in UK pounds, standardized to 2009 prices" (p.145); £2,087 is reduced lost productivity over years 1 to 3 (Table 3, p.147). "£15 per £1" is not in Park. NHS England's 2023 guidance on the EIP access and waiting time standard repeats it (PDF pp.6, 17) without a citation that could be found. | Option A: note revised. Grade stays D; price year stays "not stated". |
 
@@ -84,11 +84,16 @@ Three grade D entries checked against their primary sources. Page numbers are th
 |---|---|---|
 | H13 | "Avoidable" in the measure is the Taskforce's framing; Daley et al. measure a cost difference. | Measure kept as "Avoidable economic cost". The note explains the source. |
 
+### Follow-up decisions, 27 September 2026 (Kurve kriegen and I31)
+
+| Entry | Finding | Decision |
+|---|---|---|
+| I36 | Kurve kriegen (NRW): Prognos (2016) gives €3.23 net benefit per €1 (cautious) and €10.55 (optimistic), from before-and-after data with no comparison group (PDF pp.9, 10, 14–15). The University of Kiel's quasi-experimental evaluation (2015) found participants' recorded offending stayed level while the comparison group's fell (p.204). Lunneblad, Borg and Hammarén (2026), the evaluation of the Swedish Rätt Kurva, read Kiel the same way (p.9) and report no economic or comparative outcome data. | New entry I36 approved: grade C, result "Uncertain"; excluded from rebasing as a euro ratio. Gap added: no economic evaluation with a comparison group of this model. |
+| I31 | The copy served at the I31 link has page numbers one higher than the copy first read, and a back cover giving "Published January 2016". | Note corrected from "(p.34)" to "(p.35)"; page numbers above corrected. |
+
 ## Open
 
 | # | Entry | Query |
 |---|---|---|
 | 1 | H36 | Whether to rebase H36 from 2015/16 to 2025/26 prices. Held by Stan Gilmour on 27 September 2026. |
 | 2 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |
-| 3 | I36 | Draft entry for Kurve kriegen (NRW), from Prognos (2016) with the Kiel impact evaluation (2015) in the note, and its rebasing exclusion in `rebase.json`. Awaiting Stan Gilmour's approval. |
-| 4 | I31 | The copy of Parsonage, Grant and Stubbs (2016) served at the I31 link has page numbers one higher than the copy used on 27 September: the passages cited as pp.5, 11 and 34 are on pp.6, 12 and 35. Its back cover gives "Published January 2016". The I31 note's "(p.34)" should read "(p.35)". |
