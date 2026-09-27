@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- New entries approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
+  - I37, Nuffield Early Language Intervention (NELI), Reception: teacher-rated behavioural adjustment d = 0.23 and language skills 0.26 (0.17, 0.35) in a 193-school cluster RCT; £58 per pupil per year over three years for materials and training, excluding staff time; grade A; result "Effective, cost unclear". Sources: West et al. (2022); Dimova et al. (2020).
+  - I38, Talk of the Town (whole-school speech, language and communication support): no effect on reading comprehension or oral language in a 64-school cluster RCT; £50.97 per pupil per year; grade A; result "No effect in UK trial". Source: Thurston, Roseth and O'Hare (2016).
+  - Both excluded from rebasing (price year not stated).
+  - Known gaps: added "The youth justice study of speech and language therapy reviewed for the ledger (Gregory and Bryan, 2011) measures language, not offending or costs."
+  - Rows and the gap added to the workbook.
+
 ## v1.2.2 (27 September 2026)
 
 - Changes approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
