@@ -422,6 +422,10 @@
       "reason": "not rebased: cost-effectiveness ratio, judged against the threshold of its day"
     },
     {
+      "id": "I36",
+      "reason": "not rebased: ratio (net benefit per €1); euro figures"
+    },
+    {
       "id": "P03",
       "reason": "not rebased: threshold set in current prices from April 2026"
     },
