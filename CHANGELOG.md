@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.4 (27 September 2026)
+
+- New entry H37, language impairment among children in custody, approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md): 47% significantly below average in an aspect of language and 28% impaired among 93 males aged 15–18 in a young offender institution in England; 7 of the 26 with an impairment had received speech and language therapy. Source: Hughes et al. (2017), JCPP. Grade B. Excluded from rebasing (prevalence). Row added to the workbook.
+
 ## v1.2.3 (27 September 2026)
 
 - New entries approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
