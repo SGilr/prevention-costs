@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.2.3 (27 September 2026)
 
 - New entries approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
   - I37, Nuffield Early Language Intervention (NELI), Reception: teacher-rated behavioural adjustment d = 0.23 and language skills 0.26 (0.17, 0.35) in a 193-school cluster RCT; £58 per pupil per year over three years for materials and training, excluding staff time; grade A; result "Effective, cost unclear". Sources: West et al. (2022); Dimova et al. (2020).
