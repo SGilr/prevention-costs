@@ -61,9 +61,15 @@ Six Priority 1 sources were read in full against their entries. Page numbers are
 | H35 | IPPR (2024), p.28 and note 9: £11.2bn is IPPR's £4.5bn (the OBR's £5,000 per person applied to a 900,000 rise since 2020), plus the OBR's £3.0bn for in-work ill-health and £3.7bn for indirect effects on other taxes. The OBR (2023, p.7) gives its figures in cash for 2023-24 and puts the rise in benefit spending at £6.8bn. | Note added. Value and price year unchanged. Still excluded from rebasing. |
 | H36 | Youth Violence Commission (2020), final report: every cost table is "in GBP and using 2015/16 prices" (pp.55, 57), and the unit costs are "in 2015/16 prices" (p.52). £1.3bn is the "more likely" figure; the minimum, from police-recorded crime only, is £700m (p.42). | Source changed to the Commission's report. Price year `2018/19` → `2015/16`. Value gives the minimum. Rebasing held (see Open). |
 
+### Follow-up decisions, 27 September 2026
+
+| Entry | Finding | Decision |
+|---|---|---|
+| H36 | With the price year confirmed as 2015/16, the exclusion reason in `rebase.json` ("price year not stated in the source") contradicted the entry. | Reason changed to "not rebased: price year 2015/16, confirmed on 27 September 2026; rebasing awaits sign-off". Rebasing itself stays on hold. |
+| H18 | The item read "Acquired brain injury (all causes)", but the model costs traumatic brain injury, stroke and brain tumour only (p.9). | Item changed to "Acquired brain injury (traumatic brain injury, stroke and brain tumour)". |
+
 ## Open
 
 | # | Entry | Query |
 |---|---|---|
-| 1 | H36 | The price year is now confirmed as 2015/16, so the entry could be rebased. Held by Stan Gilmour on 27 September 2026. The exclusion reason in `rebase.json` ("price year not stated in the source (its unit costs are in 2015/16 prices)") no longer matches the entry and needs new wording, which needs sign-off. |
-| 2 | H18 | The item reads "Acquired brain injury (all causes)", but the model covers traumatic brain injury, stroke and brain tumour only. For Stan Gilmour to decide, and relevant to Huw Williams's review. |
+| 1 | H36 | Whether to rebase H36 from 2015/16 to 2025/26 prices. Held by Stan Gilmour on 27 September 2026. |

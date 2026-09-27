@@ -452,7 +452,7 @@
    "window": "abi",
    "domain": "Health",
    "hs": "Dignity",
-   "item": "Acquired brain injury (all causes)",
+   "item": "Acquired brain injury (traumatic brain injury, stroke and brain tumour)",
    "measure": "Annual cost to the economy",
    "value": "£43bn: NHS and social care £20bn; productivity £21.5bn; justice and education £1.5bn; plus benefits £1.9bn, outside the total (transfers)",
    "grade": "C",

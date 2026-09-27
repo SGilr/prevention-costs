@@ -9,6 +9,8 @@
   - H28: "(≈£85bn in 2024 prices)" removed from the value. It is not in the Home Office report or the OSR correspondence.
   - H35: note added on the three parts of the £11.2bn. It is tax revenue only and excludes benefit spending.
   - H36: source changed from the Economics Observatory (2025) to the Youth Violence Commission (2020) final report, with its Warwick repository link. Price year `2018/19` → `2015/16`, the price base of every cost table in the report. The value now includes the £700m minimum. The entry is not yet rebased.
+  - H18 item "Acquired brain injury (all causes)" → "Acquired brain injury (traumatic brain injury, stroke and brain tumour)".
+  - H36 reason for not rebasing in `rebase.json` changed to "price year 2015/16, confirmed on 27 September 2026; rebasing awaits sign-off", approved by Stan Gilmour on 27 September 2026.
   - The same cells updated in the workbook.
 
 ## v1.0.0 (25 September 2026)
