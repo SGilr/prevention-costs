@@ -124,6 +124,14 @@
       "note": "2024/25 outturn cost. Overall resource cost; direct cost not rebased."
     },
     {
+      "id": "H36",
+      "figure": "£1.3bn",
+      "amount": 1300000000,
+      "price_year": "2015/16",
+      "basis": "financial",
+      "note": "Source: every cost table \"in GBP and using 2015/16 prices\" (Youth Violence Commission 2020, pp.55, 57). £1.3bn is the \"more likely\" 2018/19 figure; the £700m minimum is not rebased."
+    },
+    {
       "id": "I05",
       "figure": "£1,812",
       "amount": 1812,
@@ -288,10 +296,6 @@
     {
       "id": "H35",
       "reason": "not rebased: price year not stated in the source"
-    },
-    {
-      "id": "H36",
-      "reason": "not rebased: price year 2015/16, confirmed on 27 September 2026; rebasing awaits sign-off"
     },
     {
       "id": "I01",
