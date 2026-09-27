@@ -104,6 +104,20 @@ Three grade D entries checked against their primary sources. Page numbers are th
 | I24 | "£15 per £1" comes from Knapp et al. (2014), Investing in recovery (Rethink Mental Illness): "at least £15 in costs can be avoided for every £1 invested in early intervention" (p.10; also p.3). Table 2 (p.10) gives net savings per person in 2012/13 prices, "updated figures from Park et al. (2014)": £5,738 in year 1, £2,234 over years 1 to 3, £6,780 over years 4 to 10. The report does not show how the ratio is calculated. NHS England's EIP guidance (2023) and the Rethink briefing repeat the figure without a citation. | Source, link, value wording ("At least"), design and note updated; grade D → C. Price year stays "not stated". |
 | P01 | The 2026 Green Book (para 8.57, p.62) sends readers to "Green Book supplementary guidance on health", a GOV.UK page published 21 April 2013 holding the Department of Health guide Policy appraisal and health (identical to the copy in `sources/`), NICE's methods guide and HSE research report RR541. None gives a current QALY value. The 2022 Green Book states £70,000 in 20/21 prices in para A1.64 (p.87), not A1.63. | Paragraph corrected to A1.64; note extended. Value, price year and link unchanged. |
 
+### Decided, 27 September 2026 (speech and language therapy evidence)
+
+Six candidate sources were checked for the ledger. Page numbers are printed pages unless marked PDF.
+
+| Source | Finding | Decision |
+|---|---|---|
+| West et al. (2022), Journal of School Psychology 92, 334–345 | NELI cluster RCT, 193 schools, 1,173 children: teacher-rated behavioural adjustment d = 0.23 (p.334; −0.23, 95% CI [−0.10, −0.37], p.340), not mediated by language gains (pp.341–342). Three authors are directors of OxEd and Assessment (p.343). | New entry I37, grade A, "Effective, cost unclear". |
+| Dimova et al. (2020), EEF evaluation report | Same trial. Language 0.26 (0.17, 0.35) (Table 1, p.4). £58 per pupil per year over three years, one-form entry; £43, two-form entry; materials and training only (Tables 25–27, pp.61–62); about 120 hours of teaching assistant time (p.65). No price year; no economic evaluation. | Cost and language effect used in I37. |
+| Thurston, Roseth and O'Hare (2016), EEF evaluation report | Talk of the Town cluster RCT, 64 primary schools: reading comprehension −0.03 (−0.46, 0.40), n = 2,696; oral language 0.11 (−1.19, 1.41), n = 292; £50.97 per pupil, £13,244.46 per school per year (executive summary, PDF pp.5–6). | New entry I38, grade A, "No effect in UK trial". |
+| Gregory and Bryan (2011), IJLCD 46(2), 202–215 | Abstract only: 65% of 72 young people entering ISSP had language difficulties; language improved on reassessment; no comparison group, cost or offending outcome. | No entry. Gap line added. |
+| Hollo, Wehby and Oliver (2014), Exceptional Children 80(2), 169–186 | Abstract only (ERIC): below-average language in 81% (95% CI 76 to 84) of 1,171 children with EBD across 22 studies. Place not stated in the abstract. | No entry until the full text confirms place. |
+| Curtis et al. (2018), Pediatrics 142(2), e20173551 | Association between language disorder and problem behaviour, g = 0.43 (95% CI 0.34 to 0.53), larger with age. No intervention or cost. | No entry. |
+| Hill et al. (2025), IJLCD 60(4), e70091 | Scoping review of 52 economic evaluations of SLT; evidence scarce. Lists UK child studies (for example Boyle et al. 2007; Dickson et al. 2009) not yet checked. | No entry; leads for later checking. |
+
 ## Open
 
 None.
