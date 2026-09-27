@@ -71,7 +71,7 @@ Entries marked CHECK are the judgement calls most worth a second look.
 | H33 | no £ amount (percentage) |
 | H34 | no £ amount (percentages) |
 | H35 | price year not stated in the source |
-| H36 | price year not stated in the source (its unit costs are in 2015/16 prices) |
+| H36 | price year 2015/16, confirmed on 27 September 2026; rebasing awaits sign-off |
 | I01 | price year not stated |
 | I02 | cost-effectiveness ratio, judged against the threshold of its day |
 | I03 | price year not stated |
