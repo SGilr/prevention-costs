@@ -118,6 +118,15 @@ Six candidate sources were checked for the ledger. Page numbers are printed page
 | Curtis et al. (2018), Pediatrics 142(2), e20173551 | Association between language disorder and problem behaviour, g = 0.43 (95% CI 0.34 to 0.53), larger with age. No intervention or cost. | No entry. |
 | Hill et al. (2025), IJLCD 60(4), e70091 | Scoping review of 52 economic evaluations of SLT; evidence scarce. Lists UK child studies (for example Boyle et al. 2007; Dickson et al. 2009) not yet checked. | No entry; leads for later checking. |
 
+### Decided, 27 September 2026 (language impairment in youth custody)
+
+| Source | Finding | Decision |
+|---|---|---|
+| Hughes et al. (2017), JCPP 58(10), 1106–1113 | Consecutive admissions to a young offender institution in North West England, males aged 15–18; 93 of 279 approached took part (pp.1107–1108). 47% significantly below average (score below 84) in an aspect of language; 28% impaired (below 77) (Table 1, p.1108). Of the 26 with an impairment, 7 had received speech and language therapy, 76% had been excluded from school and 54% had attended a non-mainstream school (Table 5, p.1109). | New entry H37, grade B; excluded from rebasing (prevalence). |
+| Bryan, Freer and Furlong (2007), IJLCD 42(5), 505–520 | 58 young men aged 15–17 in a secure college in the North of England: 66–90% below average on TOAL-3 subtests, 46–67% of these poor or very poor (p.505). The likely origin of the often-quoted "over 60%". | Cited in the H37 note. |
+| Bryan (2004), IJLCD 39(3), 391–400 | Preliminary survey of 10% of one young offender institution; test-by-test figures, for example 73% below acceptable limits on grammatical competency (p.391). | No entry. |
+| Anderson, Hawes and Snow (2016), Children and Youth Services Review 65, 195–203 | Systematic review of 16 international samples; no pooled prevalence. | No entry. |
+
 ## Open
 
 None.
