@@ -90,3 +90,5 @@ Three grade D entries checked against their primary sources. Page numbers are th
 |---|---|---|
 | 1 | H36 | Whether to rebase H36 from 2015/16 to 2025/26 prices. Held by Stan Gilmour on 27 September 2026. |
 | 2 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |
+| 3 | I36 | Draft entry for Kurve kriegen (NRW), from Prognos (2016) with the Kiel impact evaluation (2015) in the note, and its rebasing exclusion in `rebase.json`. Awaiting Stan Gilmour's approval. |
+| 4 | I31 | The copy of Parsonage, Grant and Stubbs (2016) served at the I31 link has page numbers one higher than the copy used on 27 September: the passages cited as pp.5, 11 and 34 are on pp.6, 12 and 35. Its back cover gives "Published January 2016". The I31 note's "(p.34)" should read "(p.35)". |

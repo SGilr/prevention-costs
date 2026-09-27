@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- New entry I36, Kurve kriegen (police-led early intervention, North Rhine-Westphalia): €3.23 net benefit per €1 in Prognos's cautious scenario, €10.55 in its optimistic one; grade C; result "Uncertain" because the University of Kiel's quasi-experimental impact evaluation (2015) found no fall in participants' recorded offending relative to a comparison group. Excluded from rebasing (ratio; euro figures). Row added to the workbook. Draft for Stan Gilmour's approval.
+
 ## v1.1.0 (27 September 2026)
 
 - Sources checked 27 September 2026: all 85 source links reach their source (63 automatically, 13 through Crossref, 9 in a browser), and nine entries were read against their primary sources. The date is updated on the site, in `CITATION.cff` and in the workbook.
