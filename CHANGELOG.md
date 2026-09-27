@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.2.1 (27 September 2026)
 
 - H36 rebased: £1.3bn (2015/16 prices) is also shown as £1.8bn in 2025/26 prices, labelled as an Oxon Advisory calculation (HM Treasury GDP deflator, 2015/16 index 72.09). Signed off by Stan Gilmour on 27 September 2026. 21 entries are now rebased and 67 are not.
 

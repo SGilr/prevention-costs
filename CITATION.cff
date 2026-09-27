@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this ledger, please cite it as below. Cite the original source for any individual figure."
 type: dataset
 title: "Prevention Returns Ledger"
-version: "1.2.0"
+version: "1.2.1"
 date-released: "2026-09-27"
 url: "https://returns.howpreventionworks.com"
 repository-code: "https://github.com/SGilr/prevention-costs"
