@@ -845,6 +845,27 @@
    "windowLabel": "Adolescent social and emotional development"
   },
   {
+   "id": "H37",
+   "kind": "Harm cost",
+   "stage": "adol",
+   "window": "ndc",
+   "domain": "Justice",
+   "hs": "Dignity",
+   "item": "Language impairment among children in custody",
+   "measure": "Prevalence",
+   "value": "47% significantly below average in an aspect of language; 28% impaired; 7 of 26 with an impairment had received speech and language therapy",
+   "grade": "B",
+   "design": "Cohort (93 males aged 15–18)",
+   "place": "England",
+   "year": "n/a",
+   "source": "Hughes et al. (2017), JCPP",
+   "url": "https://doi.org/10.1111/jcpp.12791",
+   "note": "Consecutive admissions to a young offender institution in North West England; 93 of 279 approached took part (pp.1107–1108). Of the 26 with an impairment, 76% had been excluded from school and 54% had attended a non-mainstream school (Table 5, p.1109). An earlier study of 58 young men aged 15–17 found 66–90% below average on language subtests (Bryan, Freer and Furlong 2007, p.505).",
+   "short": "Language impairment in youth custody",
+   "headline": "47%",
+   "windowLabel": "Neurodevelopmental conditions"
+  },
+  {
    "id": "I01",
    "kind": "Intervention",
    "stage": "preg",

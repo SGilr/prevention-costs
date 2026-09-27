@@ -298,6 +298,10 @@
       "reason": "not rebased: price year not stated in the source"
     },
     {
+      "id": "H37",
+      "reason": "not rebased: no £ amount (prevalence)"
+    },
+    {
       "id": "I01",
       "reason": "not rebased: price year not stated"
     },
