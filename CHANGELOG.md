@@ -12,6 +12,11 @@
   - H18 item "Acquired brain injury (all causes)" → "Acquired brain injury (traumatic brain injury, stroke and brain tumour)".
   - H36 reason for not rebasing in `rebase.json` changed to "price year 2015/16, confirmed on 27 September 2026; rebasing awaits sign-off", approved by Stan Gilmour on 27 September 2026.
   - The same cells updated in the workbook.
+- Data corrections after checking three Priority 2 sources (grade D entries), approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
+  - I31: source changed from Centre for Mental Health Briefing 59 (2022) to Parsonage, Grant and Stubbs (2016), the primary report. Grade D → C; design "Secondary citation of Parsonage et al. (2016)" → "Charity economic analysis". Value now reads "£2,700 per person (one-off); about £3,000 a year saved in mental health service use". Note added on how the £3,000 is derived.
+  - H13: grade D → C; design "Secondary citation" → "Danish registry sibling comparison, scaled to the UK adult population"; source now says the Taskforce converts Daley et al. (2019). The note gives Daley's euro figures, the lower estimate at 0.5% prevalence and the paper's caveat.
+  - I24: note gives the 2009 price base of the Park et al. figures and says the source of £15 per £1 is still untraced. Grade stays D.
+  - The same cells updated in the workbook.
 
 ## v1.0.0 (25 September 2026)
 
