@@ -91,9 +91,14 @@ Three grade D entries checked against their primary sources. Page numbers are th
 | I36 | Kurve kriegen (NRW): Prognos (2016) gives €3.23 net benefit per €1 (cautious) and €10.55 (optimistic), from before-and-after data with no comparison group (PDF pp.9, 10, 14–15). The University of Kiel's quasi-experimental evaluation (2015) found participants' recorded offending stayed level while the comparison group's fell (p.204). Lunneblad, Borg and Hammarén (2026), the evaluation of the Swedish Rätt Kurva, read Kiel the same way (p.9) and report no economic or comparative outcome data. | New entry I36 approved: grade C, result "Uncertain"; excluded from rebasing as a euro ratio. Gap added: no economic evaluation with a comparison group of this model. |
 | I31 | The copy served at the I31 link has page numbers one higher than the copy first read, and a back cover giving "Published January 2016". | Note corrected from "(p.34)" to "(p.35)"; page numbers above corrected. |
 
+### Follow-up decision, 27 September 2026 (H36 rebase)
+
+| Entry | Finding | Decision |
+|---|---|---|
+| H36 | Price year confirmed as 2015/16 (Youth Violence Commission 2020, pp.52, 55, 57). | Rebased with Stan Gilmour's sign-off: £1.3bn × 100 ÷ 72.0902 = £1.8bn in 2025/26 prices. Added to `rebase.json` entries and removed from the excluded list. |
+
 ## Open
 
 | # | Entry | Query |
 |---|---|---|
-| 1 | H36 | Whether to rebase H36 from 2015/16 to 2025/26 prices. Held by Stan Gilmour on 27 September 2026. |
-| 2 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |
+| 1 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |

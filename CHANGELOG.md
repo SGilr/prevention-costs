@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- H36 rebased: £1.3bn (2015/16 prices) is also shown as £1.8bn in 2025/26 prices, labelled as an Oxon Advisory calculation (HM Treasury GDP deflator, 2015/16 index 72.09). Signed off by Stan Gilmour on 27 September 2026. 21 entries are now rebased and 67 are not.
+
 ## v1.2.0 (27 September 2026)
 
 - New entry I36, Kurve kriegen (police-led early intervention, North Rhine-Westphalia): €3.23 net benefit per €1 in Prognos's cautious scenario, €10.55 in its optimistic one; grade C; result "Uncertain" because the University of Kiel's quasi-experimental impact evaluation (2015) found no fall in participants' recorded offending relative to a comparison group. Excluded from rebasing (ratio; euro figures). Row added to the workbook. Approved by Stan Gilmour on 27 September 2026.
