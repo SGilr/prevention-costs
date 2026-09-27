@@ -1,6 +1,6 @@
 # Data Queries
 
-Points noticed in `src/data/ledger.json` while building the site, and what Stan Gilmour decided on each, 25 September 2026. There are no open queries. New queries go at the end under **Open**, and any change to the data goes through a pull request with the source checked.
+Points noticed in `src/data/ledger.json` while building the site, and what Stan Gilmour decided on each. New queries go at the end under **Open**, and any change to the data goes through a pull request with the source checked.
 
 ## Decided, 25 September 2026
 
@@ -48,6 +48,22 @@ Every figure rebased to 2025/26 prices had its price year checked against its so
 | I09 | With no beneficiary recorded, the pages said "No benefit shown in trial", which overstates an "Uncertain" result. | Now reads "Benefit not established". The null UK trials (I05, I18, I19) keep "No benefit shown in trial". |
 | Workbook | A separate file, so it can drift from `ledger.json`. | Every change above was made in both. As of 25 September 2026, every Ledger-sheet field matches `ledger.json`. |
 
+## Decided, 27 September 2026
+
+Six Priority 1 sources were read in full against their entries. Page numbers are the printed page numbers.
+
+| Entry | Finding | Decision |
+|---|---|---|
+| H18 | APPG on ABI and UKABIF (2025): £43.0bn for 2023/24 is NHS and social care £20.0bn, productivity £21.5bn, and justice and education £1.5bn (p.7). Benefits of £1.9bn are "not included in the total costing" because they are transfers (p.9). The model covers traumatic brain injury, stroke and brain tumour, about 85% of ABI episodes (p.9). The total is called both the lifetime costs of ABI in 2023/24 (p.9) and a typical year (p.25). Price bases are mixed: "current prices" (p.32), 2024/25 prices (p.26) and 2024 prices (p.35, note 53). | Value marks benefits as outside the total. Price year `2025` → `2023/24`. Note rewritten. Still excluded from rebasing. |
+| H22 | IAS methodology, "2021/22 Local Authority Alcohol Cost Profile Methodology" (p.1). Some components are stated in 2021/22 prices (pp.1–2); the crime costs, the largest component, use Home Office unit costs with no uprating stated (p.2). | Price year `2024` → `not stated`, with the data year in the note. Still excluded from rebasing. |
+| H23 | Black (2020), Part One evidence pack: "The total cost of harms related to illicit drug use in England was £19.3 billion for 2017-18" (p.14), from unpublished Public Health England analysis (p.16). No price base is stated there, in the Part One summary or in the Part Two annexes (p.2). | Place `UK` → `England`. Price year `2020/21` → `not stated`, with the cost year in the note. Still excluded from rebasing. |
+| H28 | Home Office (2019), horr107: totals headed "for 2016/17" (pp.6, 42). Most components are in 2016/17 prices (pp.14, 26, 32), but the physical and emotional harm, £47.3bn of £66.2bn, uses a life-year value "adjusted to 2017 prices" (p.24). The "≈£85bn in 2024 prices" in the value is in neither this report nor the OSR correspondence. | "(≈£85bn in 2024 prices)" removed. Price year unchanged. Still excluded from rebasing. |
+| H35 | IPPR (2024), p.28 and note 9: £11.2bn is IPPR's £4.5bn (the OBR's £5,000 per person applied to a 900,000 rise since 2020), plus the OBR's £3.0bn for in-work ill-health and £3.7bn for indirect effects on other taxes. The OBR (2023, p.7) gives its figures in cash for 2023-24 and puts the rise in benefit spending at £6.8bn. | Note added. Value and price year unchanged. Still excluded from rebasing. |
+| H36 | Youth Violence Commission (2020), final report: every cost table is "in GBP and using 2015/16 prices" (pp.55, 57), and the unit costs are "in 2015/16 prices" (p.52). £1.3bn is the "more likely" figure; the minimum, from police-recorded crime only, is £700m (p.42). | Source changed to the Commission's report. Price year `2018/19` → `2015/16`. Value gives the minimum. Rebasing held (see Open). |
+
 ## Open
 
-None.
+| # | Entry | Query |
+|---|---|---|
+| 1 | H36 | The price year is now confirmed as 2015/16, so the entry could be rebased. Held by Stan Gilmour on 27 September 2026. The exclusion reason in `rebase.json` ("price year not stated in the source (its unit costs are in 2015/16 prices)") no longer matches the entry and needs new wording, which needs sign-off. |
+| 2 | H18 | The item reads "Acquired brain injury (all causes)", but the model covers traumatic brain injury, stroke and brain tumour only. For Stan Gilmour to decide, and relevant to Huw Williams's review. |
