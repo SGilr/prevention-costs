@@ -9,7 +9,7 @@ export const SITE = {
   contact: 'admin@oxonadvisory.com',
   sourcesChecked: '27 September 2026',
   sourcesCheckedISO: '2026-09-27',
-  version: '1.2.3',
+  version: '1.2.4',
   year: 2026,
   repo: 'https://github.com/SGilr/prevention-costs',
   parent: 'https://howpreventionworks.com',
