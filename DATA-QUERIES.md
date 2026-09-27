@@ -68,8 +68,20 @@ Six Priority 1 sources were read in full against their entries. Page numbers are
 | H36 | With the price year confirmed as 2015/16, the exclusion reason in `rebase.json` ("price year not stated in the source") contradicted the entry. | Reason changed to "not rebased: price year 2015/16, confirmed on 27 September 2026; rebasing awaits sign-off". Rebasing itself stays on hold. |
 | H18 | The item read "Acquired brain injury (all causes)", but the model costs traumatic brain injury, stroke and brain tumour only (p.9). | Item changed to "Acquired brain injury (traumatic brain injury, stroke and brain tumour)". |
 
+## Decided, 27 September 2026 (Priority 2)
+
+Three grade D entries checked against their primary sources. Page numbers are the printed page numbers.
+
+| Entry | Finding | Decision |
+|---|---|---|
+| I31 | Parsonage, Grant and Stubbs (2016), published 1 April 2016: "a one-off cost of IPS support of around £2,700 per client" (pp.5, 34). Savings of £5,125 over 18 months, £20,000 over five years and £32,400 over ten years are, annualised, "within the range £3,000 - £4,000 a year" (p.34). Figures are in "today's prices", not defined; the only stated price base is 2015/16, for another chapter (p.11). | Source changed to the report; grade D → C; value and note revised. Price year stays "not stated". |
+| H13 | Daley et al. (2019), *European Psychiatry* 61, 41–48, report in euros from 2010 Danish register data (p.44): €20,135 more per adult with ADHD per year than a same-sex sibling (p.45); for the UK, €19,974m at 2.5% prevalence and €4,361m at 0.5% (Table 4, p.46), described as "crude estimates" (p.45). The £17bn and £17,000 are the NHS England ADHD Taskforce's conversion at an unstated rate, using the higher prevalence. "Avoidable" is the Taskforce's word. | Option A: Taskforce £ figures and headline kept; grade D → C; design, source wording and note revised. |
+| I24 | Park, McCrone and Knapp (2016): "Costs were all reported in UK pounds, standardized to 2009 prices" (p.145); £2,087 is reduced lost productivity over years 1 to 3 (Table 3, p.147). "£15 per £1" is not in Park. NHS England's 2023 guidance on the EIP access and waiting time standard repeats it (PDF pp.6, 17) without a citation that could be found. | Option A: note revised. Grade stays D; price year stays "not stated". |
+
 ## Open
 
 | # | Entry | Query |
 |---|---|---|
 | 1 | H36 | Whether to rebase H36 from 2015/16 to 2025/26 prices. Held by Stan Gilmour on 27 September 2026. |
+| 2 | H13 | Whether the measure should change from "Avoidable economic cost" to "Economic cost", since "avoidable" is the Taskforce's framing and Daley et al. measure a cost difference. |
+| 3 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |
