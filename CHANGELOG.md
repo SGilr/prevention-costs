@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Changes approved by Stan Gilmour on 27 September 2026 (details in DATA-QUERIES.md):
+  - I24: the source of "£15 per £1" traced to Knapp et al. (2014), Investing in recovery (Rethink Mental Illness), p.10. Value now reads "At least £15 per £1 over 10 years"; grade D → C; design, source and link (LSE Research Online) updated; the note gives the 2012/13-price savings behind it and says the ratio's calculation is not shown.
+  - P01: paragraph reference corrected from A1.63 to A1.64 (Green Book 2022, p.87). The note now records that the 2026 Green Book's link to supplementary guidance on health leads to a 2013 page with no current QALY value.
+  - The same cells updated in the workbook, including the Parameters sheet's P01 reference.
+
 ## v1.2.1 (27 September 2026)
 
 - H36 rebased: £1.3bn (2015/16 prices) is also shown as £1.8bn in 2025/26 prices, labelled as an Oxon Advisory calculation (HM Treasury GDP deflator, 2015/16 index 72.09). Signed off by Stan Gilmour on 27 September 2026. 21 entries are now rebased and 67 are not.

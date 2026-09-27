@@ -97,8 +97,13 @@ Three grade D entries checked against their primary sources. Page numbers are th
 |---|---|---|
 | H36 | Price year confirmed as 2015/16 (Youth Violence Commission 2020, pp.52, 55, 57). | Rebased with Stan Gilmour's sign-off: £1.3bn × 100 ÷ 72.0902 = £1.8bn in 2025/26 prices. Added to `rebase.json` entries and removed from the excluded list. |
 
+### Follow-up decisions, 27 September 2026 (I24 and P01)
+
+| Entry | Finding | Decision |
+|---|---|---|
+| I24 | "£15 per £1" comes from Knapp et al. (2014), Investing in recovery (Rethink Mental Illness): "at least £15 in costs can be avoided for every £1 invested in early intervention" (p.10; also p.3). Table 2 (p.10) gives net savings per person in 2012/13 prices, "updated figures from Park et al. (2014)": £5,738 in year 1, £2,234 over years 1 to 3, £6,780 over years 4 to 10. The report does not show how the ratio is calculated. NHS England's EIP guidance (2023) and the Rethink briefing repeat the figure without a citation. | Source, link, value wording ("At least"), design and note updated; grade D → C. Price year stays "not stated". |
+| P01 | The 2026 Green Book (para 8.57, p.62) sends readers to "Green Book supplementary guidance on health", a GOV.UK page published 21 April 2013 holding the Department of Health guide Policy appraisal and health (identical to the copy in `sources/`), NICE's methods guide and HSE research report RR541. None gives a current QALY value. The 2022 Green Book states £70,000 in 20/21 prices in para A1.64 (p.87), not A1.63. | Paragraph corrected to A1.64; note extended. Value, price year and link unchanged. |
+
 ## Open
 
-| # | Entry | Query |
-|---|---|---|
-| 1 | I24 | The primary source for "£15 per £1 over 10 years" is still untraced. |
+None.
